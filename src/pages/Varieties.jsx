@@ -24,7 +24,7 @@ export default function Varieties() {
         <div className="container">
           <div style={s.grid}>
             {/* Big first card */}
-            <div style={s.bigCard} onClick={() => navigate('/products?cat=Varities-1')}>
+            <div style={s.bigCard} onClick={() => navigate('/products?cat=Spicy Namkeen')}>
               <img src={VARIETIES[0].image} alt={VARIETIES[0].name} style={s.cardImg} />
               <div style={s.overlay} />
               <div style={s.cardContent}>
@@ -34,7 +34,7 @@ export default function Varieties() {
               </div>
             </div>
             {/* Second card */}
-            <div style={s.medCard} onClick={() => navigate('/products?cat=Varities-2')}>
+            <div style={s.medCard} onClick={() => navigate('/products?cat=Instant Noodles')}>
               <img src={VARIETIES[1].image} alt={VARIETIES[1].name} style={s.cardImg} />
               <div style={s.overlay} />
               <div style={s.cardContent}>
@@ -45,7 +45,7 @@ export default function Varieties() {
             </div>
             {/* Small cards row */}
             {VARIETIES.slice(2).map(v => (
-              <div key={v.id} style={s.smallCard} onClick={() => navigate(`/products?cat=${v.name}`)}>
+              <div key={v.id} style={s.smallCard} onClick={() => navigate(`/products?cat=${getCategory(v.name)}`)}>
                 <img src={v.image} alt={v.name} style={s.cardImg} />
                 <div style={s.overlay} />
                 <div style={s.cardContent}>
@@ -119,6 +119,15 @@ const s = {
   ctaBtnOutline: { background: 'rgba(255,255,255,0.15)', border: '1.5px solid rgba(255,255,255,0.5)', color: '#fff', padding: '11px 24px', borderRadius: 6, fontSize: 14, fontWeight: 600, cursor: 'pointer' },
   ctaBtnWa: { background: '#1e7e34', color: '#fff', padding: '11px 24px', borderRadius: 6, fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 7, textDecoration: 'none' },
   featureBadge: { background: 'rgba(255,255,255,0.2)', color: '#fff', border: '1px solid rgba(255,255,255,0.4)', padding: '6px 16px', borderRadius: 20, fontSize: 13, fontWeight: 600 },
+};
+
+const getCategory = (name) => {
+  const map = {
+    'Bhujia': 'Spicy Namkeen',
+    'Mixture Namkeen': 'Spicy Namkeen',
+    'Boondi': 'Spicy Namkeen',
+  };
+  return map[name] || name;
 };
 
 function cardBase(h) { return { height: h }; }
