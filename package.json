@@ -10,6 +10,7 @@
     "lucide-react": "^0.383.0"
   },
   "scripts": {
+    "start": "echo 'Static site'",
     "build": "node -e \"require('react-scripts/scripts/build.js')\""
   },
   "browserslist": {
