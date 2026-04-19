@@ -236,8 +236,8 @@ const hero = {
   stat: { display: 'flex', flexDirection: 'column' },
   statNum: { fontSize: 22, fontWeight: 900, color: '#fff' },
   statLabel: { fontSize: 11, color: 'rgba(255,255,255,0.75)', fontWeight: 500 },
-  imgGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, width: 260, flexShrink: 0 },
-  gridItem: { borderRadius: 10, overflow: 'hidden', height: 120 },
+  imgGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, width: 380, flexShrink: 0 },
+  gridItem: { borderRadius: 10, overflow: 'hidden', height: 170 },
   gridImg: { width: '100%', height: '100%', objectFit: 'cover' },
 };
 
