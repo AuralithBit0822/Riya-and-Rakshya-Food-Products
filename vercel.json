@@ -1,5 +1,0 @@
-{
-  "buildCommand": "npm rebuild && npm run build",
-  "outputDirectory": "build",
-  "cache": false
-}
