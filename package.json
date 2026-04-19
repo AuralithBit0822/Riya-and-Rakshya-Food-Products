@@ -10,7 +10,6 @@
     "lucide-react": "^0.383.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "node -e \"require('react-scripts/scripts/build.js')\""
   },
   "browserslist": {

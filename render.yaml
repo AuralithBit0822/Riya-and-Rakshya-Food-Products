@@ -8,3 +8,4 @@ services:
         value: "18"
       - key: NPM_CONFIG_UNSAFE_PERM
         value: "true"
+    startCommand: serve -s build
