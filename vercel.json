@@ -1,9 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/cra-build"
-    }
-  ]
+  "build": {
+    "command": "npm run build",
+    "outputDirectory": "build"
+  }
 }
