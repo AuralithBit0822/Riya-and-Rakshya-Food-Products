@@ -293,9 +293,11 @@ input, textarea, select { font-family: var(--font); }
   .products-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .page-hero-content { padding: 0 20px; }
-  .page-hero h1 { font-size: 26px; }
+  .page-hero h1 { font-size: 22px; }
+  .nav-links, .search-form, .wa-btn { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
 }
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
