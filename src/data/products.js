@@ -518,7 +518,9 @@ export const TEAM = [
 //  TESTIMONIALS
 // ─────────────────────────────────────────────────────────────
 export const TESTIMONIALS = [
-  { id: 1, text: 'The culinary experience at place is first to none. The atmosphere is vibrant, the food – nothing short of extraordinary. The food was the highlight of our evening, highly recommended.', name: 'Andy Smith', location: 'Kathmandu Snacks', rating: 5 },
-  { id: 2, text: 'The culinary experience at place is first to none. The atmosphere is vibrant, the food – nothing short of extraordinary. The food was the highlight of our evening, highly recommended.', name: 'Andy Smith', location: 'Kathmandu Snacks', rating: 5 },
-  { id: 3, text: 'The culinary experience at place is first to none. The atmosphere is vibrant, the food – nothing short of extraordinary. The food was the highlight of our evening, highly recommended.', name: 'Andy Smith', location: 'Kathmandu Snacks', rating: 5 },
+  { id: 1, text: 'Best namkeen in Nepal! My family loves the Kushal All In One. Crunchy, spicy, and full of authentic Nepali flavor. Order received within 2 days in Pokhara!', name: 'Prakash Bhatta', location: 'Pokhara, Kaski', rating: 5 },
+  { id: 2, text: 'R&R Food Products nai best! The Korean Hot Spicy Noodles are amazing. My kids absolutely love them. Fast delivery to Butwal. Will order again!', name: 'Ramesh Kumar Yadav', location: 'Butwal, Rupandehi', rating: 5 },
+  { id: 3, text: 'Excellent quality and taste. The mixture namkeen is authentic Nepali flavor. Got it delivered in Janakpur within 3 days. Very satisfied!', name: 'Sita Devi Chaudhary', location: 'Janakpur, Dhanusa', rating: 5 },
+  { id: 4, text: 'Great snacks at affordable prices. The Potato Chips are super crispy. Ordered for my restaurant in Biratnagar. Fresh and tasty!', name: 'Dipesh Mahato', location: 'Biratnagar, Morang', rating: 5 },
+  { id: 5, text: 'Love the traditional flavors! The Bhujia reminds me of my grandmother\'s recipe. Delivered to my hostel in Pokhara. Highly recommended!', name: 'Niraj Shrestha', location: 'Kathmandu', rating: 5 },
 ];

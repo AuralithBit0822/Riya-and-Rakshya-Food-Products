@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Home, Trash2, Minus, Plus, MessageCircle, ChevronRight, ShoppingCart } from 'lucide-react';
+import { Home, Trash2, Minus, Plus, MessageCircle, ChevronRight, ShoppingCart, X, Clock } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export default function Cart() {
@@ -9,6 +9,7 @@ export default function Cart() {
   const [form, setForm] = useState({ fullName: '', phone: '', address: '', notes: '', payment: 'whatsapp' });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [showESewaModal, setShowESewaModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,9 +40,16 @@ export default function Cart() {
     if (form.payment === 'whatsapp') {
       window.open(`https://wa.me/9779800000000?text=${buildWhatsAppMsg()}`, '_blank');
     } else {
-      setSubmitted(true);
-      setTimeout(() => { clearCart(); navigate('/products'); }, 3000);
+      setShowESewaModal(true);
     }
+  };
+
+  const handleProceedToWhatsApp = () => {
+    setShowESewaModal(false);
+    setForm(f => ({ ...f, payment: 'whatsapp' }));
+    setTimeout(() => {
+      window.open(`https://wa.me/9779800000000?text=${buildWhatsAppMsg()}`, '_blank');
+    }, 100);
   };
 
   if (cart.length === 0) {
@@ -58,6 +66,23 @@ export default function Cart() {
           <p style={{ color: '#888', marginBottom: 28 }}>Browse our products and add something delicious!</p>
           <button className="btn-primary" style={{ padding: '12px 32px' }} onClick={() => navigate('/products')}>Browse Products →</button>
         </div>
+        {/* eSewa Modal */}
+        {showESewaModal && (
+          <div style={s.modalOverlay} onClick={() => setShowESewaModal(false)}>
+            <div style={s.modalContent} onClick={e => e.stopPropagation()}>
+              <button style={s.modalClose} onClick={() => setShowESewaModal(false)}><X size={20} /></button>
+              <div style={s.modalIcon}>⏳</div>
+              <h3 style={s.modalTitle}>Coming Soon!</h3>
+              <p style={s.modalText}>We're working hard to bring you eSewa payment option. This feature will be available very soon.</p>
+              <div style={s.modalHighlight}>
+                <Clock size={16} /> For now, please proceed with WhatsApp payment
+              </div>
+              <button className="btn-green" style={{ width: '100%', justifyContent: 'center', padding: 14, fontSize: 15, borderRadius: 8, marginTop: 20 }} onClick={handleProceedToWhatsApp}>
+                <MessageCircle size={16} /> Proceed via WhatsApp
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -71,6 +96,24 @@ export default function Cart() {
         </div>
       </div>
       <div style={s.banner}><h1 style={s.bannerH1}>Review Your Cart</h1></div>
+
+      {/* eSewa Modal */}
+      {showESewaModal && (
+        <div style={s.modalOverlay} onClick={() => setShowESewaModal(false)}>
+          <div style={s.modalContent} onClick={e => e.stopPropagation()}>
+            <button style={s.modalClose} onClick={() => setShowESewaModal(false)}><X size={20} /></button>
+            <div style={s.modalIcon}>⏳</div>
+            <h3 style={s.modalTitle}>Coming Soon!</h3>
+            <p style={s.modalText}>We're working hard to bring you eSewa payment option. This feature will be available very soon.</p>
+            <div style={s.modalHighlight}>
+              <Clock size={16} /> For now, please proceed with WhatsApp payment
+            </div>
+            <button className="btn-green" style={{ width: '100%', justifyContent: 'center', padding: 14, fontSize: 15, borderRadius: 8, marginTop: 20 }} onClick={handleProceedToWhatsApp}>
+              <MessageCircle size={16} /> Proceed via WhatsApp
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="container" style={{ padding: '32px 24px' }}>
         {submitted && (
@@ -211,4 +254,11 @@ const s = {
   payOption: { display: 'flex', alignItems: 'flex-start', background: '#F9F9F9', border: '1.5px solid #eee', borderRadius: 10, padding: 14, cursor: 'pointer' },
   payActive: { background: '#F0F9FF', border: '1.5px solid #90CAF9' },
   successBanner: { background: '#E8F5E9', border: '1px solid #c3e6cb', borderRadius: 8, padding: '12px 20px', color: '#2E7D32', fontWeight: 600, marginBottom: 20 },
+  modalOverlay: { position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: 20 },
+  modalContent: { background: '#fff', borderRadius: 16, padding: 32, maxWidth: 400, width: '100%', position: 'relative', textAlign: 'center', boxShadow: '0 20px 60px rgba(0,0,0,0.3)' },
+  modalClose: { position: 'absolute', top: 12, right: 12, background: '#f5f5f5', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' },
+  modalIcon: { fontSize: 56, marginBottom: 16 },
+  modalTitle: { fontSize: 24, fontWeight: 800, color: '#1a1a1a', marginBottom: 12 },
+  modalText: { color: '#666', fontSize: 14, lineHeight: 1.7, marginBottom: 16 },
+  modalHighlight: { background: '#FFF5F5', border: '1px solid #ffcdd2', borderRadius: 8, padding: '12px 16px', color: '#C8102E', fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 },
 };
