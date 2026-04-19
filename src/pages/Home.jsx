@@ -77,12 +77,17 @@ export default function Home() {
           </div>
         </div>
         <div style={hero.imgGrid}>
-          {PRODUCTS.slice(0, 4).map((p, i) => (
-            <div key={i} style={hero.gridItem}>
-              <img src={p.image} alt={p.name} style={hero.gridImg} />
-            </div>
-          ))}
-        </div>
+  {[
+    { img: '/images/products/Potato.jpg',                        bg: '#f0ece4', radius: '20px 0 0 0' },
+    { img: '/images/products/Korean_Hot_Spicy.png',              bg: '#6b6b2e', radius: '0 20px 0 0' },
+    { img: '/images/products/kushal_all_in_opne_namkeen.png',    bg: '#2c2c2c', radius: '0 0 0 20px' },
+    { img: '/images/products/Palak_paneer_Fryums.png',           bg: '#f5f5f0', radius: '0 0 20px 0' },
+  ].map((item, i) => (
+    <div key={i} style={{ ...hero.gridItem, background: item.bg }}>
+      <img src={item.img} alt={`Product ${i + 1}`} style={hero.gridImg} />
+    </div>
+  ))}
+</div>
       </section>
 
       {/* BESTSELLERS */}
@@ -225,20 +230,69 @@ export default function Home() {
 }
 
 const hero = {
-  section: { background: 'linear-gradient(135deg,#C8102E 0%,#e85d20 50%,#f5a623 100%)', padding: '60px 80px', display: 'flex', alignItems: 'center', gap: 40, minHeight: 380 },
+  section: {
+    background: 'linear-gradient(135deg,#C8102E 0%,#e85d20 55%,#f5a623 100%)',
+    padding: '50px 80px',
+    display: 'flex',
+    alignItems: 'center',
+    gap: 60,
+    minHeight: 420,
+    overflow: 'hidden',
+  },
   content: { flex: 1 },
-  badge: { background: 'rgba(255,255,255,0.2)', display: 'inline-block', color: '#fff', fontSize: 12, padding: '4px 12px', borderRadius: 20, marginBottom: 14, fontWeight: 600 },
+  badge: {
+    background: 'rgba(255,255,255,0.2)',
+    display: 'inline-block',
+    color: '#fff',
+    fontSize: 12,
+    padding: '4px 12px',
+    borderRadius: 20,
+    marginBottom: 14,
+    fontWeight: 600,
+  },
   h1: { fontSize: 42, fontWeight: 900, color: '#fff', lineHeight: 1.2, marginBottom: 14 },
   sub: { color: 'rgba(255,255,255,0.9)', fontSize: 14, lineHeight: 1.7, maxWidth: 440, marginBottom: 24 },
   btns: { display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 30 },
-  distBtn: { background: 'rgba(255,255,255,0.15)', border: '1.5px solid rgba(255,255,255,0.5)', color: '#fff', padding: '10px 22px', borderRadius: 6, fontSize: 14, fontWeight: 600, cursor: 'pointer' },
+  distBtn: {
+    background: 'rgba(255,255,255,0.15)',
+    border: '1.5px solid rgba(255,255,255,0.5)',
+    color: '#fff',
+    padding: '10px 22px',
+    borderRadius: 6,
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: 'pointer',
+  },
   stats: { display: 'flex', gap: 32 },
   stat: { display: 'flex', flexDirection: 'column' },
   statNum: { fontSize: 22, fontWeight: 900, color: '#fff' },
   statLabel: { fontSize: 11, color: 'rgba(255,255,255,0.75)', fontWeight: 500 },
-  imgGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, width: 380, flexShrink: 0 },
-  gridItem: { borderRadius: 10, overflow: 'hidden', height: 170 },
-  gridImg: { width: '100%', height: '100%', objectFit: 'cover' },
+
+  /* ── 2×2 product grid ── */
+  imgGrid: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+    gap: 0,             // ← removed gap
+    width: 480,
+    height: 420,
+    flexShrink: 0,
+    borderRadius: 24,   // ← slightly bigger radius
+    overflow: 'hidden', // ← this alone handles all 4 outer corners
+  },
+  gridItem: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+    padding: 12,
+  },
+  gridImg: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'contain',   /* show full packet — no cropping */
+    filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.18))',
+  },
 };
 
 const feat = {
