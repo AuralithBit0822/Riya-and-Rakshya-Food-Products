@@ -315,7 +315,16 @@ input, textarea, select { font-family: var(--font); }
   /* Navbar */
   .navbar-inner { padding: 0 16px !important; height: 60px !important; }
   .nav-links { display: none !important; }
-  .mobile-menu-btn { display: flex !important; }
+  .mobile-menu-btn { display: none !important; }
+  .nav-links { display: flex !important; }
+
+  /* Mobile: hide desktop nav and show menu button */
+  @media (max-width: 768px) {
+    .mobile-menu-btn { display: flex !important; }
+    .nav-links { display: none !important; }
+    .search-form { display: none !important; }
+    .wa-btn { display: none !important; }
+  }
   .search-form { display: none !important; }
   .wa-btn { display: none !important; }
   

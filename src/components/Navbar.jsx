@@ -46,7 +46,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <ul style={{ ...styles.navLinks, display: isMobile ? 'none' : 'flex' }}>
+        <ul className="nav-links" style={{ ...styles.navLinks, display: isMobile ? 'none' : 'flex' }}>
           {navLinks.map(l => (
             <li key={l.to}>
               <Link to={l.to} style={{ ...styles.navLink, ...(isActive(l.to) ? styles.navLinkActive : {}) }}>
@@ -86,7 +86,7 @@ export default function Navbar() {
             WhatsApp
           </a>
 
-          <button style={styles.mobileMenu} onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="mobile-menu-btn" style={{ ...styles.mobileMenu, display: 'flex', marginLeft: 'auto' }} onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
@@ -125,7 +125,7 @@ const styles = {
   navLinks: { display: 'flex', gap: 4, listStyle: 'none', margin: 0, padding: 0, flex: 1, justifyContent: 'center' },
   navLink: { padding: '6px 14px', borderRadius: 6, fontSize: 14, fontWeight: 500, color: '#333', textDecoration: 'none', transition: 'color 0.2s' },
   navLinkActive: { color: '#C8102E', fontWeight: 700, borderBottom: '2px solid #C8102E', borderRadius: 0 },
-  right: { display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 },
+  right: { display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, marginLeft: 'auto' },
   searchForm: { display: 'flex', alignItems: 'center', border: '1.5px solid #ddd', borderRadius: 8, background: '#fff', overflow: 'hidden' },
   searchInput: { border: 'none', outline: 'none', padding: '7px 12px', fontSize: 13, width: 140, background: 'transparent' },
   searchBtn: { background: 'none', border: 'none', padding: '7px 10px', cursor: 'pointer', display: 'flex', alignItems: 'center' },
