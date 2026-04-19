@@ -1,8 +1,10 @@
 services:
   - type: static
     name: rnr-food-products
-    buildCommand: npm rebuild && npm run build
+    buildCommand: npm install --unsafe-perm && npm rebuild && npm run build
     publishDir: build
     envVars:
       - key: NODE_VERSION
         value: "18"
+      - key: NPM_CONFIG_UNSAFE_PERM
+        value: "true"
