@@ -8,6 +8,13 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const isActive = (path) => location.pathname === path;
 
@@ -39,8 +46,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <ul style={styles.navLinks}>
+        <ul style={{ ...styles.navLinks, display: isMobile ? 'none' : 'flex' }}>
           {navLinks.map(l => (
             <li key={l.to}>
               <Link to={l.to} style={{ ...styles.navLink, ...(isActive(l.to) ? styles.navLinkActive : {}) }}>
@@ -126,7 +132,7 @@ const styles = {
   iconBtn: { position: 'relative', display: 'flex', alignItems: 'center', padding: 6, borderRadius: 8, transition: 'background 0.2s', color: '#555', textDecoration: 'none' },
   badge: { position: 'absolute', top: 0, right: 0, background: '#C8102E', color: '#fff', fontSize: 9, fontWeight: 700, width: 16, height: 16, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' },
   waBtn: { background: '#28A745', color: '#fff', border: 'none', borderRadius: 20, padding: '8px 16px', fontSize: 13, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none' },
-  mobileMenu: { display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 6 },
+  mobileMenu: { background: 'none', border: 'none', cursor: 'pointer', padding: 6 },
   mobileNav: { background: '#FFFDE7', borderTop: '1px solid #f0e6b2', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 8 },
   mobileLink: { padding: '8px 0', fontSize: 15, fontWeight: 500, color: '#333', textDecoration: 'none', borderBottom: '1px solid #f0e6b2' },
 };

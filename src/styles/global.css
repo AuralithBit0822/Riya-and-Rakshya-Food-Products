@@ -297,6 +297,112 @@ input, textarea, select { font-family: var(--font); }
   .page-hero-content { padding: 0 20px; }
   .page-hero h1 { font-size: 26px; }
 }
-@media (max-width: 480px) {
-  .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .page-hero { padding: 50px 0 40px; }
+  .page-hero h1 { font-size: 30px; }
+  .page-hero-content { padding: 0 40px; }
+  .hero-img-grid { width: 380px !important; height: 340px !important; }
+  .hero-stats { gap: 20px !important; }
+  .hero-stats .stat-num { font-size: 20px !important; }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section { padding: 40px 0; }
+  
+  /* Navbar */
+  .navbar-inner { padding: 0 16px !important; height: 60px !important; }
+  .nav-links { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+  .search-form { display: none !important; }
+  .wa-btn { display: none !important; }
+  
+  /* Products Grid - Tablet */
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  
+  /* Page Hero */
+  .page-hero { padding: 40px 0 30px; }
+  .page-hero-content { padding: 0 20px !important; }
+  .page-hero h1 { font-size: 24px !important; }
+  .page-hero p { font-size: 13px !important; }
+  .breadcrumb { font-size: 11px !important; }
+  
+  /* Hero Section (Home) */
+  .hero-section { 
+    padding: 30px 20px !important; 
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px !important;
+  }
+  .hero-content { width: 100% !important; }
+  .hero-h1 { font-size: 28px !important; line-height: 1.3 !important; }
+  .hero-sub { max-width: 100% !important; font-size: 13px !important; }
+  .hero-btns { justify-content: center !important; }
+  .hero-stats { justify-content: center !important; flex-wrap: wrap; gap: 16px !important; }
+  .hero-img-grid { width: 100% !important; height: 280px !important; max-width: 320px; }
+  
+  /* Testimonials Grid */
+  .testi-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  
+  /* Story Section */
+  .story-wrapper { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .story-img-wrap { height: 240px !important; }
+  .story-h2 { font-size: 22px !important; }
+  .story-p { font-size: 13px !important; }
+  
+  /* Features Strip */
+  .features-strip { flex-direction: column; gap: 16px !important; }
+  .feat-item { width: 100%; justify-content: flex-start; }
+  
+  /* Quality Section */
+  .qual-wrapper { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .qual-text { order: 2; }
+  .qual-img { height: 220px !important; }
+  .qual-badges { grid-template-columns: 1fr 1fr !important; }
+  .qual-stats { flex-wrap: wrap; gap: 16px !important; }
+  
+  /* CTA */
+  .cta-section { padding: 40px 20px !important; }
+  .cta-h2 { font-size: 20px !important; }
+  .cta-btns { flex-direction: column !important; align-items: center; }
+  
+  /* Footer */
+  .footer-top { 
+    grid-template-columns: 1fr 1fr !important; 
+    gap: 24px !important;
+    padding: 30px 16px !important;
+  }
+  .footer-brand { grid-column: span 2; }
+  .footer-subscribe { grid-column: span 2; }
+  
+  /* Filter tabs */
+  .filter-tabs { gap: 8px !important; }
+  .filter-btn { padding: 6px 12px !important; font-size: 11px !important; }
+  
+  /* Product Card */
+  .product-card-img { height: 160px !important; }
+  .product-card-body { padding: 10px !important; }
+  .product-card-body h3 { font-size: 12px !important; }
+  .product-price { font-size: 13px !important; }
+  .btn-add-cart { padding: 6px 8px !important; font-size: 11px !important; }
+  
+  /* Form */
+  .form-input { padding: 8px 12px; font-size: 13px; }
+  
+  /* Toast */
+  .toast { left: 16px; right: 16px; bottom: 16px; font-size: 13px; }
+}
+
+/* Extra Small - Very Small Mobile */
+@media (max-width: 375px) {
+  .products-grid { gap: 10px; }
+  .product-card-img { height: 130px !important; }
+  .page-hero h1 { font-size: 20px !important; }
+  .hero-h1 { font-size: 24px !important; }
+  .hero-img-grid { height: 220px !important; }
+  .footer-top { grid-template-columns: 1fr !important; }
+  .footer-brand { grid-column: span 1; }
+  .footer-subscribe { grid-column: span 1; }
 }
