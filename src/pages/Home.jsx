@@ -35,7 +35,7 @@ function ProductCard({ product }) {
           <button className="btn-add-cart" onClick={e => { e.stopPropagation(); addToCart(product); }}>
             <ShoppingCart size={13} /> Add to Cart
           </button>
-          <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
             onClick={e => e.stopPropagation()} className="btn-whatsapp-sm">
             <MessageCircle size={16} />
           </a>
@@ -152,7 +152,7 @@ export default function Home() {
         <p style={cta.p}>Whether you're treating yourself or stocking your store, ordering is just a message away. Fast dispatch guaranteed.</p>
         <div style={cta.btns}>
           <button style={cta.btnOutline} onClick={() => navigate('/products')}>View Full Menu</button>
-          <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer" style={cta.btnWa}>
+          <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" style={cta.btnWa}>
             <MessageCircle size={16} /> Chat on WhatsApp
           </a>
         </div>

@@ -75,7 +75,7 @@ export default function Navbar() {
             {cartCount > 0 && <span style={styles.badge}>{cartCount}</span>}
           </Link>
 
-          <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer" style={styles.waBtn}>
+          <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" style={styles.waBtn}>
             <MessageCircle size={15} />
             WhatsApp
           </a>

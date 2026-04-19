@@ -76,7 +76,7 @@ export default function ProductDetails() {
                 onClick={() => addToCart(product, selectedSize)}>
                 <ShoppingCart size={16} /> Add to Cart
               </button>
-              <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer" className="btn-green" style={{ padding: '12px 24px', fontSize: 14, textDecoration: 'none' }}>
+              <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" className="btn-green" style={{ padding: '12px 24px', fontSize: 14, textDecoration: 'none' }}>
                 <MessageCircle size={16} /> Chat via WhatsApp
               </a>
             </div>

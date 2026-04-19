@@ -149,9 +149,9 @@ export default function Footer() {
           <div style={s.contactRow}>
             <Phone size={14} color="#FFC107" style={{ flexShrink: 0, marginTop: 2 }} />
             <div>
-              <div style={s.contactTxt}>+977 980-0000000</div>
+              <div style={s.contactTxt}>+977 985-7021032</div>
               <div style={{ ...s.contactTxt, color: '#777', fontSize: 10 }}>Customer Support</div>
-              <div style={{ ...s.contactTxt, marginTop: 4 }}>+977 880-0000000000</div>
+              <div style={{ ...s.contactTxt, marginTop: 4 }}>+977 985-7021032</div>
               <div style={{ ...s.contactTxt, color: '#777', fontSize: 10 }}>Business / Wholesale</div>
             </div>
           </div>

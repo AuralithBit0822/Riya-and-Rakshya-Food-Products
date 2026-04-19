@@ -83,7 +83,7 @@ export default function Varieties() {
           </div>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 24 }}>
             <button style={s.ctaBtnOutline} onClick={() => navigate('/products')}>Explore all Products</button>
-            <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer" style={s.ctaBtnWa}>
+            <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" style={s.ctaBtnWa}>
               <MessageCircle size={15} /> Chat on WhatsApp
             </a>
           </div>

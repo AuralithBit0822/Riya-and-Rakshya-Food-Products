@@ -103,7 +103,7 @@ export default function Contact() {
                 <div>
                   <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>Need Quick Help?</div>
                   <p style={{ color: '#666', fontSize: 12, lineHeight: 1.5, marginBottom: 12 }}>Message us directly on whatsapp for immediate assistance.</p>
-                  <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer" className="btn-green" style={{ textDecoration: 'none', padding: '9px 18px', fontSize: 13, borderRadius: 20 }}>
+                  <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" className="btn-green" style={{ textDecoration: 'none', padding: '9px 18px', fontSize: 13, borderRadius: 20 }}>
                     <MessageCircle size={14} /> Chat on WhatsApp
                   </a>
                 </div>

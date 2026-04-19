@@ -31,7 +31,7 @@ function ProductCard({ product }) {
           <button className="btn-add-cart" onClick={e => { e.stopPropagation(); addToCart(product); }}>
             <ShoppingCart size={13} /> Add to Cart
           </button>
-          <a href="https://wa.me/9779800000000" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
             onClick={e => e.stopPropagation()} className="btn-whatsapp-sm">
             <MessageCircle size={16} />
           </a>

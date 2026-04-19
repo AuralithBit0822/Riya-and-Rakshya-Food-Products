@@ -38,7 +38,7 @@ export default function Cart() {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     if (form.payment === 'whatsapp') {
-      window.open(`https://wa.me/9779800000000?text=${buildWhatsAppMsg()}`, '_blank');
+      window.open(`https://wa.me/9779857021032?text=${buildWhatsAppMsg()}`, '_blank');
     } else {
       setShowESewaModal(true);
     }
@@ -48,7 +48,7 @@ export default function Cart() {
     setShowESewaModal(false);
     setForm(f => ({ ...f, payment: 'whatsapp' }));
     setTimeout(() => {
-      window.open(`https://wa.me/9779800000000?text=${buildWhatsAppMsg()}`, '_blank');
+      window.open(`https://wa.me/9779857021032?text=${buildWhatsAppMsg()}`, '_blank');
     }, 100);
   };
 
