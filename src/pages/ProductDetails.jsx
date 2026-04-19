@@ -24,8 +24,8 @@ export default function ProductDetails() {
   const related = PRODUCTS.filter(p => p.id !== product.id).slice(0, 3);
 
   const reviews = [
-    { name: 'Aakriti Bista', rating: 4, text: '"Absolutely love these! The Flavor is authentic and it\'s my go-to evening snack. Always keep a few packets in the pantry."' },
-    { name: 'Aakriti Bista', rating: 4, text: '"Absolutely love these! The Flavor is authentic and it\'s my go-to evening snack. Always keep a few packets in the pantry."' },
+    { name: 'Prakash Bhatta', rating: 5, text: '"Best namkeen in Nepal! My family loves the Kushal All In One. Crunchy, spicy, and full of authentic Nepali flavor. Order received within 2 days in Pokhara!"' },
+    { name: 'Niraj Shrestha', rating: 5, text: '"Love the traditional flavors! The Bhujia reminds me of my grandmother\'s recipe. Delivered to my hostel in Pokhara. Highly recommended!', name: 'Niraj Shrestha', location: 'Kathmandu', rating: 5 },
   ];
 
   return (
