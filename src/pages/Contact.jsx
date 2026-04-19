@@ -89,8 +89,8 @@ export default function Contact() {
             <div>
               <div style={s.infoCard}>
                 <h3 style={s.infoTitle}>Get in Touch</h3>
-                <div style={s.infoRow}><Phone size={15} color="#C8102E" /><div><div style={s.infoLabel}>Customer Support :</div><div style={s.infoVal}>+977 980-0000000</div></div></div>
-                <div style={s.infoRow}><Phone size={15} color="#C8102E" /><div><div style={s.infoLabel}>Business/Wholesale:</div><div style={s.infoVal}>+977 880-0000000000</div></div></div>
+                <div style={s.infoRow}><Phone size={15} color="#C8102E" /><div><div style={s.infoLabel}>Customer Support :</div><div style={s.infoVal}>+977 985-7021032</div></div></div>
+                <div style={s.infoRow}><Phone size={15} color="#C8102E" /><div><div style={s.infoLabel}>Business/Wholesale:</div><div style={s.infoVal}>+977 985-7021032</div></div></div>
                 <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.2)', margin: '10px 0' }} />
                 <div style={s.infoRow}><Mail size={15} color="#C8102E" /><div><div style={s.infoLabel}>Support</div><div style={s.infoVal}>Support@riyarakshya.com.np</div><div style={s.infoLabel} id="mt4">sales/Distributors:</div><div style={s.infoVal}>Sales@riyarakshya.com.np</div></div></div>
                 <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.2)', margin: '10px 0' }} />
