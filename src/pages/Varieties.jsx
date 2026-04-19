@@ -10,7 +10,7 @@ export default function Varieties() {
     <div>
       {/* Hero */}
       <div className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1583601291512-0c36fa80e4fa?w=1200&q=80)' }} />
+      <div className="page-hero-bg" style={{ backgroundImage: 'url(/images/varitieshero.png)' }} />
         <div className="page-hero-content">
           <div className="breadcrumb"><Home size={13} /><a href="/">HOME</a><span>›</span><span>VARITIES</span></div>
           <h1>Our Snack Varieties</h1>

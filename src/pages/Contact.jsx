@@ -45,7 +45,7 @@ export default function Contact() {
     <div>
       {/* Hero */}
       <div className="page-hero">
-        <div className="page-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80)' }} />
+      <div className="page-hero-bg" style={{ backgroundImage: 'url(/images/contacthero.png)' }} />
         <div className="page-hero-content">
           <div className="breadcrumb"><Home size={13} /><a href="/">HOME</a><span>›</span><span>CONTACT</span></div>
           <h1>Let's Get in Touch</h1>

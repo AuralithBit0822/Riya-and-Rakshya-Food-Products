@@ -14,7 +14,7 @@ export default function About() {
     <div>
       {/* Hero */}
       <div className="page-hero" style={{ background: '#222' }}>
-        <div className="page-hero-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80)' }} />
+      <div className="page-hero-bg" style={{ backgroundImage: 'url(/images/abouthero.png)' }} />
         <div className="page-hero-content">
           <div className="breadcrumb"><Home size={13} /><a href="/">HOME</a><span>›</span><span>ABOUT</span></div>
           <h1>About Riya &amp; Rakshya Food Products</h1>
