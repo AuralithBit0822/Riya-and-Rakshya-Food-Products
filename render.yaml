@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: rnr-food-products
+    buildCommand: npm rebuild && npm run build
+    publishDir: build
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
