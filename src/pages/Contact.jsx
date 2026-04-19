@@ -3,11 +3,38 @@ import { useNavigate } from 'react-router-dom';
 import { Home, Phone, Mail, MapPin, MessageCircle, ChevronDown, ChevronUp, Send } from 'lucide-react';
 
 const FAQS = [
-  { q: 'Are you snacks vegetarian?', a: 'Yes, all our snacks are 100% vegetarian. We use only plant-based ingredients and no animal products in our manufacturing process.' },
-  { q: 'Are you snacks vegetarian?', a: 'Yes, all our snacks are 100% vegetarian and certified.' },
-  { q: 'Are you snacks vegetarian?', a: 'Absolutely. Our entire product range is vegetarian-friendly.' },
-  { q: 'How can I become a distributor?', a: 'Please reach out via our contact form or call our business line. We will guide you through the distributor onboarding process with competitive pricing and dedicated support.' },
-  { q: 'What Pack sizes are available?', a: 'We offer packs ranging from 30g to 1kg depending on the product. Bulk orders are also available for retailers and distributors.' },
+  // ── GENERAL QUESTIONS ──
+  { q: 'What products does Riya & Rakshya Food Products manufacture?', a: 'We manufacture over 50 varieties of snacks including Spicy Namkeen, Instant Noodles, Chips & Crisps, Diet & Health snacks, and Kids Snacks. Our popular products include Kushal Namkeen, Korean Hot & Spicy Noodles, Potato Chips, Bhujia, Mixture, Boondi, and many more.' },
+  { q: 'Where is Riya & Rakshya Food Products located?', a: 'Our manufacturing facility is located in Bhairahwa, Nepal. We operate from S.No.-4, SugarMill area and serve customers across all 77 districts of Nepal.' },
+  { q: 'What are your business hours?', a: 'We are open Sunday through Friday from 9:00 AM to 6:00 PM. Our customer support team is available during these hours to assist you with any inquiries.' },
+  
+  // ── PRODUCT QUESTIONS ──
+  { q: 'Are your snacks vegetarian?', a: 'Yes, all our snacks are 100% vegetarian. We use only plant-based ingredients and no animal products in our manufacturing process. Every product is certified vegetarian.' },
+  { q: 'What pack sizes are available?', a: 'We offer packs ranging from 15g to 2kg depending on the product. Our smallest packs start at Rs.10 (15g-30g) for kids snacks, while our family-size packs go up to 1kg and 2kg for retail and bulk buyers.' },
+  { q: 'Do your products contain any preservatives?', a: 'No, we are committed to quality and do not use preservatives in our products. Our snacks are made from fresh, natural ingredients with no artificial additives.' },
+  { q: 'Are your products halal certified?', a: 'Our products are 100% vegetarian and we follow strict quality standards. For specific certification requirements, please contact our sales team.' },
+  { q: 'What allergens should I be aware of?', a: 'Some products may contain allergens such as peanuts, wheat (gluten), soy, dairy traces, or mustard. Please check the packaging or product details for specific allergen information. We clearly label all potential allergens on our products.' },
+  
+  // ── QUALITY & SAFETY ──
+  { q: 'What quality standards do you follow?', a: 'We follow strict quality standards including FSSAI compliance and ISO standards. Our manufacturing facility follows rigorous hygiene protocols with our team wearing gloves, helmets, and protective gear at all times. Every batch undergoes quality testing before reaching customers.' },
+  { q: 'How do you ensure product freshness?', a: 'We maintain strict quality checks from sourcing to packaging. Our products are manufactured in small batches to ensure freshness, and we use modern machinery with standardized processes to deliver the best quality snacks.' },
+  { q: 'Where do you source your ingredients from?', a: 'We source our spices locally from Nepal and carefully select all raw materials. We never compromise on the quality of ingredients and believe great taste starts with great components.' },
+  
+  // ── ORDERS & DISTRIBUTION ──
+  { q: 'How can I become a distributor?', a: 'Please reach out via our contact form or call our business line at +977 880-0000000000. We will guide you through the distributor onboarding process with competitive pricing and dedicated support. We are always looking for retail partners and distributors across Nepal.' },
+  { q: 'Do you offer bulk order discounts?', a: 'Yes, we offer factory-direct pricing for bulk orders and have dedicated support for retailers and distributors. Contact our sales team at Sales@riyarakshya.com.np for custom quotes based on your order volume.' },
+  { q: 'How can I place a wholesale order?', a: 'You can contact our wholesale team at +977 880-0000000000 or email Sales@riyarakshya.com.np. We provide dedicated support for all wholesale and bulk order inquiries.' },
+  { q: 'What areas do you deliver to?', a: 'We serve all 77 districts across Nepal through our network of 500+ retail partners. Our products are available throughout the nation.' },
+  
+  // ── CUSTOMER SUPPORT ──
+  { q: 'How can I contact customer support?', a: 'You can reach us at +977 980-0000000 for customer support, email us at Support@riyarakshya.com.np, or chat with us on WhatsApp at +977 9800000000. We are available Sunday-Friday, 9:00 AM to 6:00 PM.' },
+  { q: 'How can I report a product issue or quality concern?', a: 'We take quality concerns seriously. Please contact our customer support team immediately with your batch number and product details. You can reach us via phone, email, or WhatsApp.' },
+  { q: 'What information is on the product packaging?', a: 'Our packaging includes product name, ingredients, allergen information, net weight, manufacturing date, expiry date, batch number, and MRP. For detailed ingredient and allergy information, always check the packaging.' },
+  
+  // ── STORAGE & PRODUCT INFO ──
+  { q: 'How should I store your snacks?', a: 'Store in a cool, dry place away from direct sunlight. Once opened, consume within a few days for best taste and crunchiness. Keep the pack sealed tightly to maintain freshness.' },
+  { q: 'What is the shelf life of your products?', a: 'Shelf life varies by product. Please refer to the expiry date printed on the packaging. Our products are manufactured fresh and we recommend consuming before the best-before date for optimal taste.' },
+  { q: 'Where can I find the batch number and expiry date?', a: 'The batch number and expiry date are printed on the back of each product pack. You can find this information along with other manufacturing details on the packaging label.' },
 ];
 
 export default function Contact() {
