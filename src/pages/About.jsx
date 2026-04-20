@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Home, MessageCircle, ShieldCheck, Award, Leaf, Star } from 'lucide-react';
-import { TEAM, TESTIMONIALS } from '../data/products';
+import { Home, MessageCircle, ShieldCheck, Award, Leaf } from 'lucide-react';
+import { TEAM } from '../data/products';
+import './Pages.css';
 
 const MANUFACTURE_PRODUCTS = [
   { img: '/images/products/kushal_all_in_opne_namkeen.png',          label: 'Namkeen',        sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
@@ -207,31 +208,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* TESTIMONIALS */}
-        <section style={{ background: '#fff', padding: '50px 0' }}>
-          <div className="container">
-            <div style={{ textAlign: 'center', marginBottom: 32 }}>
-              <div className="label-tag">CUSTOMER REVIEWS</div>
-              <h2 style={s.h2}>What Our Customers Say</h2>
-              <p style={{ color: '#777', fontSize: 14 }}>Real feedback from happy customers across Nepal</p>
-            </div>
-            <div style={s.testiGrid}>
-              {TESTIMONIALS.map(t => (
-                <div key={t.id} style={s.testiCard}>
-                  <div style={s.testiStars}>
-                    {[...Array(t.rating)].map((_, i) => <Star key={i} size={14} fill="#FFC107" color="#FFC107" />)}
-                  </div>
-                  <p style={s.testiText}>"{t.text}"</p>
-                  <div style={s.testiAuthor}>
-                    <div style={s.testiName}>{t.name}</div>
-                    <div style={s.testiLocation}>📍 {t.location}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* BOTTOM CTAs */}
         <section style={{ background: '#fff', padding: '40px 24px' }}>
           <div className="container">
@@ -307,11 +283,4 @@ const s = {
   ctaRight:      { background: '#FFF5F5', borderRadius: 12, padding: 28, border: '1px solid #ffd6d6' },
   ctaTitle:      { fontSize: 18, fontWeight: 700, marginBottom: 10, color: '#1a1a1a' },
   ctaDesc:       { color: '#666', fontSize: 13, lineHeight: 1.7, marginBottom: 18 },
-  testiGrid:     { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 },
-  testiCard:     { background: '#F9F6F0', borderRadius: 12, padding: 24, position: 'relative' },
-  testiStars:    { display: 'flex', gap: 2, marginBottom: 12 },
-  testiText:     { color: '#555', fontSize: 13, lineHeight: 1.7, marginBottom: 16, fontStyle: 'italic' },
-  testiAuthor:   { borderTop: '1px solid #e0e0e0', paddingTop: 12 },
-  testiName:     { fontWeight: 700, fontSize: 14, color: '#1a1a1a' },
-  testiLocation: { fontSize: 12, color: '#888', marginTop: 4 },
 };
