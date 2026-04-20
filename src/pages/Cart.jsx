@@ -10,6 +10,7 @@ export default function Cart() {
   const [form, setForm] = useState({ fullName:'', phone:'', address:'', notes:'', payment:'whatsapp' });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [esewaMessage, setEsewaMessage] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,14 +34,16 @@ export default function Cart() {
 
   const handleOrder = (e) => {
     e.preventDefault();
+    if (form.payment === 'esewa') {
+      setEsewaMessage(true);
+      setTimeout(() => setEsewaMessage(false), 10000);
+      return;
+    }
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
-    if (form.payment === 'whatsapp') {
-      window.open(`https://wa.me/9779857021032?text=${buildMsg()}`, '_blank');
-    } else {
-      setSubmitted(true);
-      setTimeout(() => { clearCart(); navigate('/products'); }, 3000);
-    }
+    window.open(`https://wa.me/9779857021032?text=${buildMsg()}`, '_blank');
+    setSubmitted(true);
+    setTimeout(() => { clearCart(); navigate('/products'); }, 3000);
   };
 
   if (cart.length === 0) return (
@@ -72,7 +75,26 @@ export default function Cart() {
       <div className="cart-banner"><h1 className="cart-banner-title">Review Your Cart</h1></div>
 
       <div className="container" style={{ padding: '28px 24px 48px' }}>
-        {submitted && <div className="success-banner">✅ Order placed! Redirecting...</div>}
+        {submitted && <div className="success-banner">✅ Order sent to WhatsApp! Redirecting...</div>}
+        {esewaMessage && (
+          <>
+            <div onClick={() => setEsewaMessage(false)} style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 9998 }}></div>
+            <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: '#fff', padding: 32, borderRadius: 16, zIndex: 9999, maxWidth: 400, width: '90%', textAlign: 'center', boxShadow: '0 20px 60px rgba(0,0,0,0.3)', animation: 'fadeIn 0.3s ease-out' }}>
+              <div style={{ fontSize: 48, marginBottom: 16 }}>💳</div>
+              <h3 style={{ margin: '0 0 12px', color: '#C8102E', fontSize: 20 }}>Payment Option Unavailable</h3>
+              <p style={{ margin: '0 0 20px', color: '#555', lineHeight: 1.6 }}>Sorry, eSewa payment is not available right now. This feature will be added soon.</p>
+              <p style={{ margin: '0 0 20px', color: '#333', fontWeight: 600 }}>Please use <strong>WhatsApp</strong> to place your order instead.</p>
+              <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button onClick={() => { setForm(f => ({ ...f, payment: 'whatsapp' })); setEsewaMessage(false); }} style={{ background: '#25D366', color: '#fff', border: 'none', padding: '12px 24px', borderRadius: 8, fontSize: 15, fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <MessageCircle size={18} /> Pay via WhatsApp
+                </button>
+                <button onClick={() => setEsewaMessage(false)} style={{ background: '#eee', color: '#333', border: 'none', padding: '12px 24px', borderRadius: 8, fontSize: 15, fontWeight: 600, cursor: 'pointer' }}>
+                  Close
+                </button>
+              </div>
+            </div>
+          </>
+        )}
         <div className="cart-layout">
           {/* Cart items */}
           <div className="cart-card">
