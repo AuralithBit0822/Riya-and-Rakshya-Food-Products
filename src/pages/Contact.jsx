@@ -24,11 +24,11 @@ const FAQS = [
   // ── ORDERS & DISTRIBUTION ──
   { q: 'How can I become a distributor?', a: 'Please reach out via our contact form or call our business line at +977 880-0000000000. We will guide you through the distributor onboarding process with competitive pricing and dedicated support. We are always looking for retail partners and distributors across Nepal.' },
   { q: 'Do you offer bulk order discounts?', a: 'Yes, we offer factory-direct pricing for bulk orders and have dedicated support for retailers and distributors. Contact our sales team at Sales@riyarakshya.com.np for custom quotes based on your order volume.' },
-  { q: 'How can I place a wholesale order?', a: 'You can contact our wholesale team at +977 880-0000000000 or email Sales@riyarakshya.com.np. We provide dedicated support for all wholesale and bulk order inquiries.' },
+  { q: 'How can I place a wholesale order?', a: 'You can contact our wholesale team at +977 985-7021032 or email Sales@riyarakshya.com.np. We provide dedicated support for all wholesale and bulk order inquiries.' },
   { q: 'What areas do you deliver to?', a: 'We serve all 77 districts across Nepal through our network of 500+ retail partners. Our products are available throughout the nation.' },
   
   // ── CUSTOMER SUPPORT ──
-  { q: 'How can I contact customer support?', a: 'You can reach us at +977 980-0000000 for customer support, email us at Support@riyarakshya.com.np, or chat with us on WhatsApp at +977 9800000000. We are available Sunday-Friday, 9:00 AM to 6:00 PM.' },
+  { q: 'How can I contact customer support?', a: 'You can reach us at +977 985-7021032 for customer support, email us at Support@riyarakshya.com.np, or chat with us on WhatsApp at +977 9800000000. We are available Sunday-Friday, 9:00 AM to 6:00 PM.' },
   { q: 'How can I report a product issue or quality concern?', a: 'We take quality concerns seriously. Please contact our customer support team immediately with your batch number and product details. You can reach us via phone, email, or WhatsApp.' },
   { q: 'What information is on the product packaging?', a: 'Our packaging includes product name, ingredients, allergen information, net weight, manufacturing date, expiry date, batch number, and MRP. For detailed ingredient and allergy information, always check the packaging.' },
   
@@ -51,6 +51,8 @@ export default function Contact() {
     if (!form.name.trim()) e.name = 'Full name is required';
     if (!form.email.trim()) e.email = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Enter a valid email address';
+    if (!form.phone.trim()) e.phone = 'Phone number is required';
+    else if (!/^[+]?[\d\s\-]{9,15}$/.test(form.phone)) e.phone = 'Enter a valid phone number';
     if (!form.message.trim()) e.message = 'Message is required';
     else if (form.message.trim().length < 10) e.message = 'Message must be at least 10 characters';
     return e;
@@ -66,6 +68,10 @@ export default function Contact() {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
+    // Build WhatsApp message
+    const waMessage = encodeURIComponent(`📬 *New Contact Form Submission*\n\n*Name:* ${form.name}\n*Email:* ${form.email}\n*Phone:* ${form.phone}\n*Inquiry Type:* ${form.inquiry || 'General'}\n\n*Message:*\n${form.message}`);
+    // Open WhatsApp with message
+    window.open(`https://wa.me/9779857021032?text=${waMessage}`, '_blank');
     setSubmitted(true);
     setTimeout(() => { setSubmitted(false); setForm({ name:'', email:'', phone:'', inquiry:'', message:'' }); }, 4000);
   };
@@ -111,7 +117,7 @@ export default function Contact() {
             <div className="contact-form-card">
               <h3 style={{ fontSize: 18, fontWeight: 700, color: '#C8102E', marginBottom: 6 }}>Send us a Message</h3>
               <p style={{ color: '#777', fontSize: 13, marginBottom: 20 }}>Fill out the form below and we'll get back to you as soon as possible.</p>
-              {submitted && <div className="success-banner">✅ Message sent! We'll get back to you shortly.</div>}
+              {submitted && <div className="success-banner">✅ Message sent via WhatsApp! We'll get back to you shortly.</div>}
               <form onSubmit={handleSubmit} noValidate>
                 <div className="form-group">
                   <label className="form-label">Name <span className="req">*</span></label>
@@ -125,8 +131,9 @@ export default function Contact() {
                     {errors.email && <div className="error-msg">{errors.email}</div>}
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Phone</label>
-                    <input className="form-input" name="phone" placeholder="Your phone" value={form.phone} onChange={handleChange} />
+                    <label className="form-label">Phone <span className="req">*</span></label>
+                    <input className={`form-input${errors.phone ? ' error' : ''}`} name="phone" placeholder="Your phone number" value={form.phone} onChange={handleChange} />
+                    {errors.phone && <div className="error-msg">{errors.phone}</div>}
                   </div>
                 </div>
                 <div className="form-group">
@@ -142,8 +149,8 @@ export default function Contact() {
                   <textarea className={`form-input${errors.message ? ' error' : ''}`} name="message" placeholder="Write your message here..." rows={5} value={form.message} onChange={handleChange} style={{ resize: 'vertical' }} />
                   {errors.message && <div className="error-msg">{errors.message}</div>}
                 </div>
-                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', padding: 13, fontSize: 15 }}>
-                  <Send size={15} /> Send Message
+                <button type="submit" className="btn-green" style={{ width: '100%', justifyContent: 'center', padding: 13, fontSize: 15, marginTop: 8 }}>
+                  <MessageCircle size={15} /> Send via WhatsApp
                 </button>
               </form>
             </div>
