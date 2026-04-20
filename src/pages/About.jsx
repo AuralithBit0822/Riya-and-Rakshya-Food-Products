@@ -37,7 +37,7 @@ export default function About() {
         {/* THE R&R STORY */}
         <section className="section">
           <div className="container">
-            <div style={s.storyGrid}>
+            <div className="about-story-grid">
               <div>
                 <div className="label-tag">ABOUT US</div>
                 <h2 style={s.h2}>The R&amp;R Story</h2>
@@ -63,7 +63,7 @@ export default function About() {
               <div className="label-tag">WHAT DRIVES US</div>
               <h2 style={s.h2}>The Core Purpose And Future Aspirations Of Our Company</h2>
             </div>
-            <div style={s.mvGrid}>
+            <div className="about-mv-grid">
               <div style={s.missionCard}>
                 <div style={s.mvIcon}>🎯</div>
                 <div style={s.mvLabel}>Our Mission</div>
@@ -93,7 +93,7 @@ export default function About() {
               <div className="label-tag">OUR PRODUCTS</div>
               <h2 style={s.h2}>What We Manufacture</h2>
             </div>
-            <div style={s.productsGrid}>
+            <div className="about-products-grid">
               {MANUFACTURE_PRODUCTS.map((p, i) => (
                 <div key={i} style={s.productThumb} onClick={() => navigate('/products')}>
                   <img src={p.img} alt={p.label} style={s.thumbImg} />
@@ -116,7 +116,7 @@ export default function About() {
         {/* QUALITY & SAFETY */}
         <section style={{ background: '#F4F4F4', padding: '50px 0' }}>
           <div className="container">
-            <div style={s.qualGrid}>
+            <div className="about-qual-grid">
               <div style={s.qualImgWrap}>
                 <img src="/images/products/bnOONDI_MIXTURE_STAND.png" alt="Quality" style={s.qualImgMain} />
                 <img src="/images/products/sadhabahar.png" alt="Premium" style={s.qualImgOverlay} />
@@ -150,7 +150,7 @@ export default function About() {
               <h2 style={{ color: '#fff', fontSize: 24, fontWeight: 800 }}>Manufacturing At Scale</h2>
               <p style={{ color: '#aaa', fontSize: 13, marginTop: 6 }}>Delivering quality snacks across the nation every single day.</p>
             </div>
-            <div style={s.statsRow}>
+            <div className="about-stats-row">
               {[['50+','Product Manufactured'],['77','Districts Covered'],['500+','Retail Partners'],['10K+','Daily Production (Kg)']].map(([n, l]) => (
                 <div key={l} style={s.statItem}>
                   <div style={s.statNum}>{n}</div>
@@ -168,7 +168,7 @@ export default function About() {
               <div className="label-tag">OUR ADVANTAGES</div>
               <h2 style={s.h2}>Why Choose Riya &amp; Rakshya?</h2>
             </div>
-            <div style={s.whyGrid}>
+            <div className="about-why-grid">
               {[
                 { icon: '❤️', title: 'Delicious Taste',      desc: 'Authentic Nepal flavours loved by people from all ages.' },
                 { icon: '📦', title: 'Multiple Size',         desc: 'From 50g to 1 kg — a size for every need.' },
@@ -194,7 +194,7 @@ export default function About() {
               <h2 style={s.h2}>The People Behind the Brand</h2>
               <p style={{ color: '#777', fontSize: 14 }}>Meet the passionate team that brings your favorite snacks to life.</p>
             </div>
-            <div style={s.teamGrid}>
+            <div className="about-team-grid">
               {TEAM.map(m => (
                 <div key={m.id} style={s.teamCard}>
                   <div style={s.teamImg}>
@@ -211,7 +211,7 @@ export default function About() {
         {/* BOTTOM CTAs */}
         <section style={{ background: '#fff', padding: '40px 24px' }}>
           <div className="container">
-            <div style={s.ctaRow}>
+            <div className="about-cta-row">
               <div style={s.ctaLeft}>
                 <h3 style={s.ctaTitle}>Ready to explore our snacks?</h3>
                 <p style={s.ctaDesc}>Browse our wide collection of freshly crafted snacks, made with quality ingredients and authentic recipes. From crispy bites to rich, flavorful treats, find the perfect treat for every moment.</p>
