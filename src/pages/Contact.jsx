@@ -90,7 +90,7 @@ export default function Contact() {
             <div className="contact-left">
               <div className="contact-info-card">
                 <h3 className="contact-info-title">Get in Touch</h3>
-                <div className="contact-info-row"><Phone size={14} color="#C8102E" /><div><div className="ci-label">Customer Support</div><div className="ci-val">+977 980-0000000</div><div className="ci-label" style={{marginTop:6}}>Business/Wholesale</div><div className="ci-val">+977 880-0000000000</div></div></div>
+                <div className="contact-info-row"><Phone size={14} color="#C8102E" /><div><div className="ci-label">Customer Support</div><div className="ci-val">+977 985-7021032</div><div className="ci-label" style={{marginTop:6}}>Business/Wholesale</div><div className="ci-val">+977 985-7021032</div></div></div>
                 <div className="contact-info-row"><Mail size={14} color="#C8102E" /><div><div className="ci-val">Support@riyarakshya.com.np</div><div className="ci-val">Sales@riyarakshya.com.np</div></div></div>
                 <div className="contact-info-row"><MapPin size={14} color="#C8102E" /><div className="ci-val">S.No.-4, SugarMill, Bhairahwa, Rupandehi, Nepal</div></div>
                 <div className="contact-info-row"><Clock size={14} color="#C8102E" /><div className="ci-val">Sun–Fri: 9:00 AM – 6:00 PM</div></div>
