@@ -5,17 +5,27 @@ import { useApp } from '../context/AppContext';
 import { PRODUCTS, TESTIMONIALS } from '../data/products';
 import './Home.css';
 
+// ── Product Card ────────────────────────────────────────────
 function ProductCard({ product }) {
   const { addToCart, toggleWishlist, isWishlisted } = useApp();
   const navigate = useNavigate();
   const wishlisted = isWishlisted(product.id);
+  const hasPrices  = product.sizeOptions && product.sizeOptions.length > 0;
+  const isNew      = product.price === 0;
+
   return (
     <div className="product-card" onClick={() => navigate(`/products/${product.id}`)}>
       <div className="product-card-img">
-        <img src={product.image} alt={product.name} />
+        <img src={product.image} alt={product.name}
+          onError={e => { e.target.style.opacity = '0.4'; }} />
         <span className="product-card-badge">{product.category}</span>
-        <button className={`product-card-heart${wishlisted ? ' active' : ''}`}
-          onClick={e => { e.stopPropagation(); toggleWishlist(product); }}>
+        {product.badge && (
+          <span className="product-card-badge product-card-badge--top-right">{product.badge}</span>
+        )}
+        <button
+          className={`product-card-heart${wishlisted ? ' active' : ''}`}
+          onClick={e => { e.stopPropagation(); toggleWishlist(product); }}
+        >
           <svg width="14" height="14" viewBox="0 0 24 24"
             fill={wishlisted ? '#C8102E' : 'none'}
             stroke={wishlisted ? '#C8102E' : '#999'} strokeWidth="2">
@@ -26,38 +36,65 @@ function ProductCard({ product }) {
       <div className="product-card-body">
         <h3>{product.name}</h3>
         <p>{product.description}</p>
-        <div style={{ color: '#C8102E', fontWeight: 700, fontSize: 14, margin: '4px 0 8px' }}>
-          Rs.{product.price} <span style={{ color: '#888', fontWeight: 400, fontSize: 12 }}>/ {product.unit}</span>
-        </div>
+
+        {/* Price & sizes */}
+        {isNew ? (
+          <div className="pc-coming-soon">🔥 Coming Soon — Price TBD</div>
+        ) : hasPrices ? (
+          <div className="pc-size-price-list">
+            {product.sizeOptions.map(s => (
+              <span key={s.size} className="pc-size-pill">
+                {s.size} — <strong>Rs.{s.price}</strong>
+              </span>
+            ))}
+          </div>
+        ) : (
+          <div className="pc-price">
+            Rs.{product.price} <span className="pc-unit">/ {product.unit}</span>
+          </div>
+        )}
+
         <div className="product-card-actions">
-          <button className="btn-add-cart" onClick={e => { e.stopPropagation(); addToCart(product); }}>
-            <ShoppingCart size={13} /> Add to Cart
-          </button>
-          <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
-            onClick={e => e.stopPropagation()} className="btn-whatsapp-sm">
-            <MessageCircle size={16} />
-          </a>
+          {!isNew ? (
+            <>
+              <button className="btn-add-cart"
+                onClick={e => { e.stopPropagation(); addToCart(product); }}>
+                <ShoppingCart size={13} /> Add to Cart
+              </button>
+              <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
+                onClick={e => e.stopPropagation()} className="btn-whatsapp-sm">
+                <MessageCircle size={16} />
+              </a>
+            </>
+          ) : (
+            <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
+              className="btn-add-cart" style={{ background: '#28A745', textDecoration: 'none', justifyContent: 'center' }}
+              onClick={e => e.stopPropagation()}>
+              <MessageCircle size={13} /> Enquire on WhatsApp
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
+// Hero grid — show NEW + popular products prominently
 const HERO_ITEMS = [
-  { img: '/images/products/Potato.jpg',                     bg: '#f0ece4' },
-  { img: '/images/products/Korean_Hot_Spicy.png',           bg: '#3a1f10' },
-  { img: '/images/products/kushal_all_in_opne_namkeen.png', bg: '#1f2c1f' },
-  { img: '/images/products/Palak_paneer_Fryums.png',        bg: '#e6f2e6' },
+  { img: '/images/products/cheese_balls.jpeg',       bg: '#fff8f0' },
+  { img: '/images/products/Jungle_Janawar.png',      bg: '#e8f5e8' },
+  { img: '/images/products/chatpate_bhuja_new.png',  bg: '#1a0a00' },
+  { img: '/images/products/aone_chips_green.jpeg',   bg: '#e8f5e0' },
 ];
 
 export default function Home() {
-  const navigate  = useNavigate();
+  const navigate   = useNavigate();
   const [tPage, setTPage] = useState(0);
   const bestsellers = PRODUCTS.slice(0, 8);
 
   return (
     <div>
-      {/* ── HERO ──────────────────────────────────────────── */}
+      {/* ── HERO ─────────────────────────────────────────── */}
       <section className="home-hero">
         <div className="home-hero__content">
           <div className="home-hero__badge">🏔 नेपालका स्वाद</div>
@@ -87,17 +124,49 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 2×2 product grid */}
+        {/* 2×2 product showcase grid */}
         <div className="home-hero__grid">
           {HERO_ITEMS.map((item, i) => (
             <div key={i} className="home-hero__cell" style={{ background: item.bg }}>
-              <img src={item.img} alt={`Product ${i+1}`} className="home-hero__cell-img" />
+              <img src={item.img} alt={item.label} className="home-hero__cell-img"
+                onError={e => { e.target.style.opacity = '0.3'; }} />
+              {i < 2 && <span className="home-hero__cell-label">{item.label}</span>}
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── BESTSELLERS ───────────────────────────────────── */}
+      {/* ── NEW LAUNCHES STRIP ───────────────────────────── */}
+      <section className="home-new-strip">
+        <div className="container">
+          <div className="home-new-inner">
+            <div className="home-new-badge">🔥 NEW LAUNCHES</div>
+            <div className="home-new-products">
+              {[
+                { img: '/images/products/cheese_balls.jpeg',   name: 'Cheese Balls' },
+                { img: '/images/products/Jungle_Janawar.png',  name: 'Jungle Janawar' },
+                { img: '/images/products/masala_ponga.jpeg',   name: 'Masala Ponga' },
+                { img: '/images/products/aone_chips_green.jpeg',name: 'A-One Chips' },
+                { img: '/images/products/chatpate_bhuja_new.png',name:'Chatpate Bhuja' },
+              ].map(p => (
+                <div key={p.name} className="home-new-item"
+                  onClick={() => navigate('/products')}>
+                  <div className="home-new-img-wrap">
+                    <img src={p.img} alt={p.name}
+                      onError={e => { e.target.style.opacity = '0.3'; }} />
+                  </div>
+                  <span className="home-new-name">{p.name}</span>
+                </div>
+              ))}
+            </div>
+            <button className="home-new-cta" onClick={() => navigate('/products?cat=Chips%20%26%20Crisps')}>
+              View All New →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BESTSELLERS ──────────────────────────────────── */}
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 32 }}>
@@ -109,12 +178,14 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center', marginTop: 32 }}>
             <button className="btn-outline" style={{ padding: '12px 36px' }}
-              onClick={() => navigate('/products')}>View All Products →</button>
+              onClick={() => navigate('/products')}>
+              View All Products →
+            </button>
           </div>
         </div>
       </section>
 
-      {/* ── FEATURES STRIP ────────────────────────────────── */}
+      {/* ── FEATURES STRIP ───────────────────────────────── */}
       <section className="home-features">
         <div className="container">
           <div className="home-features__row">
@@ -137,21 +208,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STORY ─────────────────────────────────────────── */}
+      {/* ── STORY ────────────────────────────────────────── */}
       <section className="section">
         <div className="container">
           <div className="home-story">
             <div className="home-story__img">
-              <img src="/images/products/kushal_all_in_opne_namkeen.png" alt="R&R Story" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src="/images/products/kushal_all_in_opne_namkeen.png" alt="R&R Story"
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <div className="home-story__text">
               <div className="label-tag">ABOUT US</div>
               <h2 style={{ fontSize: 26, fontWeight: 800, margin: '10px 0 16px' }}>The R&amp;R Story</h2>
               <p style={{ color: '#666', fontSize: 14, lineHeight: 1.8, marginBottom: 12 }}>
-                We Started with one goal: make snacks that are fast, tasty, and satisfying. From our kitchen to your table, every bite is crafted with care, using quality ingredients and traditional recipes. We believe that great taste comes from consistency and passion in every step of the process.
+                We started with one goal: make snacks that are fast, tasty, and satisfying. From
+                our kitchen to your table, every bite is crafted with care, using quality ingredients
+                and traditional recipes.
               </p>
               <p style={{ color: '#666', fontSize: 14, lineHeight: 1.8, marginBottom: 12 }}>
-                Today, Riya and Rakshya Food Products manufactures over 50 varieties of Instant noodles, namkeen, dalmot, chips and bhujiya — loved by thousands across Nepal.
+                Today, Riya and Rakshya Food Products manufactures over 50 varieties of instant
+                noodles, namkeen, dalmot, chips and bhujiya — loved by thousands across Nepal.
               </p>
               <button className="btn-primary" style={{ marginTop: 20 }} onClick={() => navigate('/about')}>
                 Learn more about us →
@@ -161,11 +236,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────── */}
       <section className="home-cta">
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 className="home-cta__h2">Ready to stock up on Nepal's favorite snacks?</h2>
-          <p className="home-cta__p">Whether you're treating yourself or stocking your store, ordering is just a message away. Fast dispatch guaranteed.</p>
+          <p className="home-cta__p">Whether you're treating yourself or stocking your store, ordering is just a message away.</p>
           <div className="home-cta__btns">
             <button className="home-cta__btn-outline" onClick={() => navigate('/products')}>View Full Menu</button>
             <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" className="home-cta__btn-wa">
@@ -175,7 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ──────────────────────────────────── */}
+      {/* ── TESTIMONIALS ─────────────────────────────────── */}
       <section className="section" style={{ background: '#fff' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: 32 }}>
@@ -198,17 +273,17 @@ export default function Home() {
             ))}
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10, marginTop: 24 }}>
-            <button className="home-pag__btn" onClick={() => setTPage(p => Math.max(0, p-1))}><ChevronLeft size={16} /></button>
+            <button className="home-pag__btn" onClick={() => setTPage(p => Math.max(0,p-1))}><ChevronLeft size={16}/></button>
             {[1,2,3].map((n,i) => (
               <button key={i} className={`home-pag__dot${i===tPage?' home-pag__dot--active':''}`}
                 onClick={() => setTPage(i)}>{n}</button>
             ))}
-            <button className="home-pag__btn" onClick={() => setTPage(p => Math.min(2, p+1))}><ChevronRight size={16} /></button>
+            <button className="home-pag__btn" onClick={() => setTPage(p => Math.min(2,p+1))}><ChevronRight size={16}/></button>
           </div>
         </div>
       </section>
 
-      {/* ── QUALITY ───────────────────────────────────────── */}
+      {/* ── QUALITY ──────────────────────────────────────── */}
       <section className="section" style={{ background: '#F9F6F0' }}>
         <div className="container">
           <div className="home-quality">
@@ -216,7 +291,8 @@ export default function Home() {
               <div className="label-tag">QUALITY FIRST</div>
               <h2 style={{ fontSize: 26, fontWeight: 800, margin: '10px 0 16px' }}>Safe, Clean &amp; Delicious</h2>
               <p style={{ color: '#666', fontSize: 14, lineHeight: 1.8, marginBottom: 20 }}>
-                Our snacks are prepared in a clean, hygienic environment with strict quality checks, ensuring every bite is safe and tasty. From sourcing to packaging, we never compromise.
+                Our snacks are prepared in a clean, hygienic environment with strict quality checks.
+                From sourcing to packaging, we never compromise.
               </p>
               <div className="home-quality__badges">
                 {['✅ FSSAI Compliant','🏆 ISO Standards','🔬 Quality Tested','🌱 No Preservatives'].map(b => (

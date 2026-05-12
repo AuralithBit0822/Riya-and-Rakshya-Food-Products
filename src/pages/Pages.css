@@ -3,6 +3,63 @@
    Varieties, Cart, Contact, Wishlist, About
    ═══════════════════════════════════════════════════════ */
 
+   /* ── ProductDetails extras ─────────────────────────────── */
+.pd-top-row       { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+.pd-product-badge {
+  background: #C8102E; color: #fff;
+  font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+}
+.pd-new-overlay {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  background: #C8102E; color: #fff;
+  font-size: 12px; font-weight: 800;
+  padding: 5px 16px; border-radius: 20px;
+  white-space: nowrap;
+}
+.pd-coming-soon {
+  background: #FFF3F3; border: 1.5px dashed #C8102E;
+  color: #C8102E; font-size: 13px; font-weight: 600;
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Size buttons with price */
+.pd-size-btn {
+  display: flex; flex-direction: column; align-items: center;
+  background: #fff; border: 1.5px solid #ddd;
+  border-radius: 8px; padding: 8px 14px;
+  cursor: pointer; transition: all .2s; gap: 2px;
+}
+.pd-size-btn:hover { border-color: #C8102E; }
+.pd-size-btn--active { background: #C8102E !important; border-color: #C8102E !important; }
+.pd-size-btn--active .pd-size-size,
+.pd-size-btn--active .pd-size-price { color: #fff !important; }
+.pd-size-size  { font-size: 13px; font-weight: 600; color: #333; }
+.pd-size-price { font-size: 11px; color: #C8102E; font-weight: 700; }
+
+/* Products listing card extras */
+.pc-size-price-list {
+  display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 10px;
+}
+.pc-size-pill {
+  background: #F4F4F4; border: 1px solid #e5e5e5;
+  border-radius: 5px; padding: 2px 8px;
+  font-size: 11px; color: #444; white-space: nowrap;
+}
+.pc-size-pill strong { color: #C8102E; }
+.pc-coming-soon {
+  font-size: 12px; font-weight: 600; color: #C8102E;
+  background: #FFF3F3; border: 1px dashed #C8102E;
+  border-radius: 6px; padding: 5px 10px; margin: 6px 0 10px;
+}
+
+/* New badge on card top-right */
+.product-card-badge--right {
+  left: auto; right: 10px;
+  background: #C8102E; color: #fff;
+}
+
 /* ── Helpers ─────────────────────────────────────────── */
 .pc-price { color: #C8102E; font-weight: 700; font-size: 14px; margin: 6px 0 8px; }
 .pc-unit  { color: #888; font-weight: 400; font-size: 12px; }
@@ -299,3 +356,4 @@
   .about-team-grid { grid-template-columns: 1fr 1fr; }
   .about-stats-row { grid-template-columns: 1fr 1fr; }
 }
+
