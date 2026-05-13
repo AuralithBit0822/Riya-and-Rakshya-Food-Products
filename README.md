@@ -1,58 +1,102 @@
-# R&R Food Products - React Website
+# 🍴 R&R Food Products - React Website
 
-A complete e-commerce website for **Riya & Rakshya Food Products**, built with React.
+A complete modern e-commerce website for **Riya & Rakshya Food Products**, built using **React.js** with responsive UI, product showcase, cart system, wishlist, WhatsApp ordering, and Vercel deployment.
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📋 Prerequisites
+
 - Node.js 16+ installed
 - npm or yarn
 
-### Installation
+---
+
+## ⚙️ Installation
 
 ```bash
-# 1. Navigate to project folder
+# 1️⃣ Clone the Repository
+git clone https://github.com/AuralithBit0822/Riya-and-Rakshya-Food-Products.git
+
+# 2️⃣ Navigate to Project Folder
+
+```bash
 cd rnr-website
-
-# 2. Install dependencies
-npm install
-
-# 3. Start development server
-npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+# 3️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+# 4️⃣ Build the Project
+
+```bash
+npm run build
+```
+
+---
+
+# 🚀 Run Production Build Locally
+
+Install serve package globally:
+
+```bash
+npm install -g serve
+```
+
+Run the build folder:
+
+```bash
+serve -s build
+```
+
+Open in browser:
+
+```bash
+http://localhost:3000
+```
 
 ---
 
 ## 📁 Project Structure
 
-```
-rnr-website/
+```bash
+Riya-and-Rakshya-Food-Products/
 ├── public/
 │   └── index.html
+│
 ├── src/
-│   ├── App.jsx                  # Main app with routing
-│   ├── index.jsx                # React entry point
+│   ├── App.jsx
+│   ├── main.jsx
+│   │
 │   ├── components/
-│   │   ├── Navbar.jsx           # Sticky navbar with search, cart, wishlist
-│   │   └── Footer.jsx           # Footer with subscribe form
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   │
 │   ├── context/
-│   │   └── AppContext.jsx       # Global state (cart, wishlist, toasts)
+│   │   └── AppContext.jsx
+│   │
 │   ├── data/
-│   │   └── products.js          # Product data, categories, teams, testimonials
+│   │   └── products.js
+│   │
 │   ├── pages/
-│   │   ├── Home.jsx             # Homepage with hero, bestsellers, story, CTA
-│   │   ├── Products.jsx         # Product listing with category filters
-│   │   ├── ProductDetails.jsx   # Product detail page
-│   │   ├── Varieties.jsx        # Varieties/categories grid page
-│   │   ├── About.jsx            # About us page
-│   │   ├── Contact.jsx          # Contact page with validated form
-│   │   ├── Cart.jsx             # Cart & checkout with WhatsApp ordering
-│   │   └── Wishlist.jsx         # Wishlist page (empty + filled states)
+│   │   ├── Home.jsx
+│   │   ├── Products.jsx
+│   │   ├── ProductDetails.jsx
+│   │   ├── Varieties.jsx
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Cart.jsx
+│   │   └── Wishlist.jsx
+│   │
 │   └── styles/
-│       └── global.css           # Global CSS, variables, utilities
-└── package.json
+│       └── global.css
+│
+├── package.json
+└── README.md
 ```
 
 ---
@@ -61,51 +105,89 @@ rnr-website/
 
 | Page | Route | Features |
 |------|-------|---------|
-| Home | `/` | Hero, bestsellers grid, feature strip, story, CTA, testimonials, quality section |
-| Products | `/products` | Category filter tabs, search, product grid, add to cart |
-| Product Detail | `/products/:id` | Size selector, reviews, ingredients, allergy info, related products |
-| Varieties | `/varieties` | Varieties grid, featured banner, CTA section |
-| About | `/about` | Story, mission/vision, what we manufacture, quality, stats, team |
-| Contact | `/contact` | Validated contact form, FAQ accordion, map, WhatsApp button |
-| Cart | `/cart` | Cart items, qty update, remove, delivery form, WhatsApp ordering, eSewa payment |
-| Wishlist | `/wishlist` | Empty state, product grid with remove & add-to-cart |
+| Home | `/` | Hero section, featured products, testimonials, CTA |
+| Products | `/products` | Product listing, filters, search, add to cart |
+| Product Detail | `/products/:id` | Product details, reviews, related products |
+| Varieties | `/varieties` | Food varieties/categories showcase |
+| About | `/about` | Company details, mission, vision, team |
+| Contact | `/contact` | Contact form, FAQ, WhatsApp support |
+| Cart | `/cart` | Cart management, checkout, WhatsApp ordering |
+| Wishlist | `/wishlist` | Wishlist management system |
 
 ---
 
 ## 🎯 Functionality
 
-- **Cart**: Add/remove items, quantity control, clear all, order via WhatsApp
-- **Wishlist**: Toggle heart icon on any product, persist during session
-- **Search**: Search bar in navbar, filters product listing
-- **Form Validation**: Contact form + checkout form with real-time error messages
-- **WhatsApp Integration**: Order details auto-formatted and sent via WhatsApp
-- **Toast Notifications**: Add to cart/wishlist feedback
-- **FAQ Accordion**: Expandable questions on Contact page
-- **Category Filtering**: Filter products by variety on Products page
+- 🛒 Add to Cart System
+- ❤️ Wishlist Functionality
+- 🔍 Product Search & Filters
+- 📱 Fully Responsive Design
+- ✅ Form Validation
+- 💬 WhatsApp Order Integration
+- 🔔 Toast Notifications
+- 📂 Category Filtering
+- ⚡ Fast Performance using Vite
+- 🌐 Vercel Deployment
 
 ---
 
 ## 🔧 Customization
 
-### Update WhatsApp Number
-In `src/components/Navbar.jsx`, `src/pages/Cart.jsx`, and `src/pages/Contact.jsx`:
+### 📞 Update WhatsApp Number
+
+Update in:
+
+```bash
+src/components/Navbar.jsx
+src/pages/Cart.jsx
+src/pages/Contact.jsx
+```
+
+Replace:
+
 ```js
 href="https://wa.me/YOUR_NUMBER_HERE"
 ```
 
-### Add Products
-In `src/data/products.js`, add to the `PRODUCTS` array:
-```js
-{ id: 17, name: 'Your Product', category: 'Varities-1', price: 99, unit: '100g', ... }
+---
+
+### ➕ Add Products
+
+In:
+
+```bash
+src/data/products.js
 ```
 
-### Change Colors
-In `src/styles/global.css`:
+Add new product object:
+
+```js
+{
+  id: 17,
+  name: 'Your Product',
+  category: 'Varieties',
+  price: 99,
+  unit: '100g'
+}
+```
+
+---
+
+### 🎨 Change Theme Colors
+
+In:
+
+```bash
+src/styles/global.css
+```
+
+Edit:
+
 ```css
 :root {
-  --primary: #C8102E;   /* Red */
-  --green: #28A745;     /* WhatsApp/buttons */
-  --accent: #FFC107;    /* Yellow accent */
+  --primary: #C8102E;
+  --green: #28A745;
+  --accent: #FFC107;
 }
 ```
 
@@ -113,16 +195,52 @@ In `src/styles/global.css`:
 
 ## 📦 Dependencies
 
-- `react` + `react-dom` — UI framework
-- `react-router-dom` — Client-side routing
-- `lucide-react` — Icon library
+- React.js
+- React DOM
+- React Router DOM
+- Lucide React
+- Vite
 
 ---
 
-## 🏗 Build for Production
+## 🏗️ Build for Production
 
 ```bash
 npm run build
 ```
 
-Output in `/build` folder, ready to deploy on Netlify, Vercel, or any static host.
+Production-ready files will be generated inside:
+
+```bash
+dist/
+```
+
+---
+
+## 🚀 Deployment
+
+This project is deployed on **Vercel**.
+
+### 🌐 Live Website
+
+https://riya-and-rakshya-food-products.vercel.app/
+
+---
+
+## 👨‍💻 Developed By
+
+### Supriya Dwivedi
+
+Full Stack Java Developer & Web Developer
+
+### GitHub
+
+https://github.com/AuralithBit0822
+
+---
+
+## 📄 License
+
+This project is developed for educational and business purposes.
+
+© 2026 Riya and Rakshya Food Products. All rights reserved.
