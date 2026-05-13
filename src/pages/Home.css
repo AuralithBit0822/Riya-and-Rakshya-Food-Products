@@ -344,10 +344,10 @@
   border-radius: 8px;
   display: flex;
   gap: 12px;
-  min-height: 124px;
+  min-height: 80px;
   min-width: 0;
   padding: 16px;
-  width: 318px;
+  width: 280px;
 }
 
 .home-features__icon {

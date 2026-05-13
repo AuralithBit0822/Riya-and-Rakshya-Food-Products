@@ -144,6 +144,8 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <span>&copy; 2026 Riya &amp; Rakshya Food Products. All rights reserved.</span>
+        <br />
+        <small>Designed, Developed and Delivered by Auralith Bit</small>
       </div>
     </footer>
   );
