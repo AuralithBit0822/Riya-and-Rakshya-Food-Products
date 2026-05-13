@@ -622,18 +622,29 @@ export const PRODUCTS = [
 //  TEAM MEMBERS
 // ─────────────────────────────────────────────────────────────
 export const TEAM = [
-  { id: 1, name: 'Riya Pandey',    role: 'Founder & Director',      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&q=80' },
-  { id: 2, name: 'Rakshya Pandey', role: 'Co-Founder & Operations', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80' },
-  { id: 3, name: 'Riya Pandey',    role: 'Head of Production',      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80' },
-  { id: 4, name: 'Rakshya Pandey', role: 'Quality Manager',         image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80' },
+  { id: 1, name: 'Riya',    role: 'Founder & Director',      initials: 'R', image: '' },
+  { id: 2, name: 'Rakshya', role: 'Co-Founder & Operations', initials: 'R', image: '' },
 ];
 // ─────────────────────────────────────────────────────────────
 //  TESTIMONIALS
 // ─────────────────────────────────────────────────────────────
 export const TESTIMONIALS = [
-  { id: 1, text: 'Best namkeen in Nepal! My family loves the Kushal All In One. Crunchy, spicy, and full of authentic Nepali flavor. Order received within 2 days in Pokhara!', name: 'Prakash Bhatta', location: 'Pokhara, Kaski', rating: 5 },
-  { id: 2, text: 'R&R Food Products nai best! The Korean Hot Spicy Noodles are amazing. My kids absolutely love them. Fast delivery to Butwal. Will order again!', name: 'Ramesh Kumar Yadav', location: 'Butwal, Rupandehi', rating: 5 },
-  { id: 3, text: 'Excellent quality and taste. The mixture namkeen is authentic Nepali flavor. Got it delivered in Janakpur within 3 days. Very satisfied!', name: 'Sita Devi Chaudhary', location: 'Janakpur, Dhanusa', rating: 5 },
-  { id: 4, text: 'Great snacks at affordable prices. The Potato Chips are super crispy. Ordered for my restaurant in Biratnagar. Fresh and tasty!', name: 'Dipesh Mahato', location: 'Biratnagar, Morang', rating: 5 },
-  { id: 5, text: 'Love the traditional flavors! The Bhujia reminds me of my grandmother\'s recipe. Delivered to my hostel in Pokhara. Highly recommended!', name: 'Niraj Shrestha', location: 'Kathmandu', rating: 5 },
+  { id: 1, text: 'Kushal All In One has the proper Nepali chatpate taste. The namkeen stays crunchy, the masala is balanced, and every packet feels fresh.', name: 'Prakash Bhatta', location: 'Pokhara, Kaski', rating: 5 },
+  { id: 2, text: 'I keep R&R snacks in my shop because customers ask for them again. The packaging looks clean, the price is practical, and the quality is consistent.', name: 'Ramesh Kumar Yadav', location: 'Butwal, Rupandehi', rating: 5 },
+  { id: 3, text: 'The mixture namkeen tastes homemade but has professional finishing. It is spicy, crunchy, and perfect with tea for the whole family.', name: 'Sita Devi Chaudhary', location: 'Janakpur, Dhanusha', rating: 5 },
+  { id: 4, text: 'Potato chips and kids snacks are always fresh when they arrive. Good crunch, strong flavour, and very reliable for our canteen orders.', name: 'Dipesh Mahato', location: 'Biratnagar, Morang', rating: 5 },
+  { id: 5, text: 'R&R products have become regular snacks in our home. The taste feels local, the packets are hygienic, and the delivery is dependable.', name: 'Sabina Thapa', location: 'Hetauda, Makwanpur', rating: 5 },
+  { id: 6, text: 'The Korean Hot & Spicy noodles sell very fast in our store. Customers like the bold masala and the packet quality looks trustworthy.', name: 'Bikash Adhikari', location: 'Bharatpur, Chitwan', rating: 5 },
+  { id: 7, text: 'I ordered namkeen for our office tea break and everyone liked it. The flavour is not flat, the crunch lasts, and the price is reasonable.', name: 'Mina Karki', location: 'Nepalgunj, Banke', rating: 5 },
+  { id: 8, text: 'Jungle Janawar and Cheese Balls are favourites for children in our family. Fresh packets, nice taste, and no stale smell at all.', name: 'Puja Lamichhane', location: 'Tansen, Palpa', rating: 5 },
+  { id: 9, text: 'As a retailer, I appreciate that the products are consistent from carton to carton. R&R snacks are easy to recommend to regular customers.', name: 'Amit Sah', location: 'Birgunj, Parsa', rating: 5 },
+  { id: 10, text: 'The diet mixture has a clean taste and feels lighter than many other snacks. It is perfect when guests come home for chiya.', name: 'Anita Gurung', location: 'Dharan, Sunsari', rating: 5 },
+  { id: 11, text: 'Chatpate Bhuja has a strong local flavour and the crunch is excellent. It reminds me of snacks we buy during travel, but cleaner packed.', name: 'Kiran Rai', location: 'Ilam', rating: 5 },
+  { id: 12, text: 'We use R&R snacks for school canteen supply because the small packs move quickly. Children like the taste and parents trust the hygiene.', name: 'Laxmi Poudel', location: 'Damak, Jhapa', rating: 5 },
+  { id: 13, text: 'The masala in the namkeen is balanced very well. It is spicy enough for Nepali taste but does not feel too heavy.', name: 'Roshan KC', location: 'Dang', rating: 5 },
+  { id: 14, text: 'A-One chips are crispy and the flavour coating is even. Every packet I opened had the same freshness and crunch.', name: 'Manisha Shahi', location: 'Surkhet', rating: 5 },
+  { id: 15, text: 'For wholesale orders, R&R has been dependable. Cartons arrive properly packed and customers recognize the taste now.', name: 'Hari Prasad Nepal', location: 'Kathmandu', rating: 5 },
+  { id: 16, text: 'Boondi mixture is very good with tea. The texture is light, the spice is clean, and the packet quality feels premium.', name: 'Nirmala Magar', location: 'Baglung', rating: 5 },
+  { id: 17, text: 'My family liked the kids snacks because they are fun and tasty. The products feel fresh, not oily or stale.', name: 'Sanjay Tamang', location: 'Bhaktapur', rating: 5 },
+  { id: 18, text: 'The snack range has good variety for a small store. Customers can choose noodles, chips, namkeen, and kids snacks from one brand.', name: 'Rekha Sharma', location: 'Lalitpur', rating: 5 },
 ];

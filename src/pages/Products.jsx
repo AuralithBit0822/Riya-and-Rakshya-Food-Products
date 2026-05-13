@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ShoppingCart, MessageCircle, Home } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -88,6 +88,10 @@ export default function Products() {
   const initSearch = searchParams.get('search') || '';
   const [activeCat, setActiveCat] = useState(initCat);
   const { searchQuery } = useApp();
+
+  useEffect(() => {
+    setActiveCat(initCat);
+  }, [initCat]);
 
   const filtered = useMemo(() => {
     let list = PRODUCTS;

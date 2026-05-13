@@ -1,19 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Home, MessageCircle, ShieldCheck, Award, Leaf } from 'lucide-react';
 import { TEAM } from '../data/products';
 import './Pages.css';
 
 const MANUFACTURE_PRODUCTS = [
-  { img: '/images/products/kushal_all_in_opne_namkeen.png',          label: 'Namkeen',        sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/Korean_Hot_Spicy.png',                     label: 'Noodles',        sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/Potato.jpg',                               label: 'Chips',          sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/bikaneri_bhujia.jpg',                      label: 'Bhujia',         sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/mixture_namkeen_jpg.jpeg',                  label: 'Mixture',        sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/Diet_Mixture.png',                         label: 'Diet Mix',       sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/ABCD.png',                                 label: 'Kids Snacks',    sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
-  { img: '/images/products/Rnr_Krunchy_Sticks_Rs_20_Nov_2022.png',   label: 'Krunchy Sticks', sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/kushal_all_in_opne_namkeen.png',        label: 'Namkeen',        category: 'Spicy Namkeen',   sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/Korean_Hot_Spicy.png',                  label: 'Noodles',        category: 'Instant Noodles', sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/Potato.jpg',                            label: 'Chips',          category: 'Chips & Crisps',  sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/bikaneri_bhujia.jpg',                   label: 'Bhujia',         category: 'Spicy Namkeen',   sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/mixture_namkeen_jpg.jpeg',              label: 'Mixture',        category: 'Spicy Namkeen',   sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/Diet_Mixture.png',                      label: 'Diet Mix',       category: 'Diet & Health',   sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/ABCD.png',                              label: 'Kids Snacks',    category: 'Kids Snacks',     sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
+  { img: '/images/products/Rnr_Krunchy_Sticks_Rs_20_Nov_2022.png', label: 'Krunchy Sticks', category: 'Chips & Crisps',  sub: 'Crunchy, authentic spicy, and irresistibly addictive' },
 ];
+
+function TeamMemberCard({ member }) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const hasImage = Boolean(member.image) && !imageFailed;
+  const initials = member.initials || member.name.split(' ').map((part) => part[0]).join('').slice(0, 2);
+
+  return (
+    <div className="about-team-card">
+      <div className="about-team-photo">
+        {hasImage ? (
+          <img
+            src={member.image}
+            alt={member.name}
+            loading="lazy"
+            onError={() => setImageFailed(true)}
+          />
+        ) : (
+          <div className="about-team-placeholder" aria-label={`${member.name} profile placeholder`}>
+            <img src="/images/Logo.png" alt="" />
+            <span>{initials}</span>
+          </div>
+        )}
+      </div>
+      <div className="about-team-body">
+        <div className="about-team-name">{member.name}</div>
+        <div className="about-team-role">{member.role}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   const navigate = useNavigate();
@@ -95,7 +125,11 @@ export default function About() {
             </div>
             <div className="about-products-grid">
               {MANUFACTURE_PRODUCTS.map((p, i) => (
-                <div key={i} style={s.productThumb} onClick={() => navigate('/products')}>
+                <div
+                  key={i}
+                  style={s.productThumb}
+                  onClick={() => navigate(`/products?cat=${encodeURIComponent(p.category)}`)}
+                >
                   <img src={p.img} alt={p.label} style={s.thumbImg} />
                   <div style={s.thumbOverlay} />
                   <div style={s.thumbContent}>
@@ -196,13 +230,7 @@ export default function About() {
             </div>
             <div className="about-team-grid">
               {TEAM.map(m => (
-                <div key={m.id} style={s.teamCard}>
-                  <div style={s.teamImg}>
-                    <img src={m.image} alt={m.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  </div>
-                  <div style={s.teamName}>{m.name}</div>
-                  <div style={s.teamRole}>{m.role}</div>
-                </div>
+                <TeamMemberCard key={m.id} member={m} />
               ))}
             </div>
           </div>

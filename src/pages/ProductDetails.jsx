@@ -5,6 +5,60 @@ import { useApp } from '../context/AppContext';
 import { PRODUCTS } from '../data/products';
 import './Pages.css';
 
+const REVIEWERS = [
+  { name: 'Prakash Bhatta', location: 'Pokhara, Kaski' },
+  { name: 'Sita Devi Chaudhary', location: 'Janakpur, Dhanusha' },
+  { name: 'Ramesh Kumar Yadav', location: 'Butwal, Rupandehi' },
+  { name: 'Anita Gurung', location: 'Dharan, Sunsari' },
+  { name: 'Dipesh Mahato', location: 'Biratnagar, Morang' },
+  { name: 'Niraj Shrestha', location: 'Kathmandu' },
+  { name: 'Sabina Thapa', location: 'Hetauda, Makwanpur' },
+  { name: 'Bikash Adhikari', location: 'Chitwan' },
+  { name: 'Mina Karki', location: 'Nepalgunj, Banke' },
+  { name: 'Kiran Rai', location: 'Ilam' },
+  { name: 'Puja Lamichhane', location: 'Tansen, Palpa' },
+  { name: 'Amit Sah', location: 'Birgunj, Parsa' },
+];
+
+const REVIEW_TEMPLATES = {
+  'Instant Noodles': [
+    'The masala has a nice kick and the noodles are quick for evening snacks. {product} has become a regular pack at our home.',
+    'I bought {product} for the shop and customers ask for it again. The taste feels fresh and the price is easy to sell.',
+  ],
+  'Chips & Crisps': [
+    '{product} is crispy and the flavour is strong without feeling too oily. The packet stayed fresh during delivery.',
+    'My kids finished {product} the same day. Good crunch, good masala, and perfect for tiffin snacks.',
+  ],
+  'Kids Snacks': [
+    '{product} is fun for children and still tasty for adults. The pack size is convenient for school breaks.',
+    'We tried {product} for a family gathering and the kids loved it. Fresh, crunchy, and easy to share.',
+  ],
+  'Diet & Health': [
+    '{product} feels lighter than regular fried snacks but still has good flavour. I like keeping it for tea time.',
+    'Good balance of crunch and spice in {product}. It arrived fresh and the quality felt consistent.',
+  ],
+  'Spicy Namkeen': [
+    '{product} has that proper Nepali chatpate taste. Crunchy, spicy, and perfect with chiya.',
+    'The spice mix in {product} is very satisfying. I ordered it for home and everyone liked the freshness.',
+  ],
+};
+
+function getProductReviews(product) {
+  const templates = REVIEW_TEMPLATES[product.category] || REVIEW_TEMPLATES['Spicy Namkeen'];
+  const firstIndex = product.id % REVIEWERS.length;
+  const secondIndex = (product.id * 3 + 5) % REVIEWERS.length;
+  const reviewers = [
+    REVIEWERS[firstIndex],
+    REVIEWERS[secondIndex === firstIndex ? (secondIndex + 1) % REVIEWERS.length : secondIndex],
+  ];
+
+  return reviewers.map((reviewer, index) => ({
+    ...reviewer,
+    rating: index === 0 ? product.rating : Math.max(4, product.rating - 1),
+    text: templates[index % templates.length].replace('{product}', product.name),
+  }));
+}
+
 export default function ProductDetails() {
   const { id }     = useParams();
   const navigate   = useNavigate();
@@ -24,10 +78,7 @@ export default function ProductDetails() {
 
   const isNew    = product.price === 0;
   const related  = PRODUCTS.filter(p => p.category === product.category && p.id !== product.id).slice(0, 3);
-  const reviews  = [
-    { name: 'Prakash Bhatta', rating: 5, text: '"Best namkeen in Nepal! My family loves the Kushal All In One. Crunchy, spicy, and full of authentic Nepali flavor. Order received within 2 days in Pokhara!"' },
-    { name: 'Niraj Shrestha', rating: 5, text: '"Love the traditional flavors! The Bhujia reminds me of my grandmother\'s recipe. Delivered to my hostel in Pokhara. Highly recommended!."' },
-  ];
+  const reviews  = getProductReviews(product);
 
   return (
     <div style={{ background: '#F4F4F4', minHeight: '100vh' }}>
@@ -137,17 +188,16 @@ export default function ProductDetails() {
         <div className="pd-reviews-grid">
           <div className="pd-white-card">
             <h3 className="pd-sec-title">Customer Reviews</h3>
-            {product.reviews > 0 ? reviews.map((r, i) => (
+            {reviews.map((r, i) => (
               <div key={i} className="pd-review">
                 <div className="pd-review-name">
                   {'★'.repeat(r.rating)}
                   <span style={{ color: '#333', marginLeft: 8 }}>{r.name}</span>
+                  <span style={{ color: '#888', marginLeft: 6, fontWeight: 400 }}>({r.location})</span>
                 </div>
                 <p className="pd-review-text">{r.text}</p>
               </div>
-            )) : (
-              <p style={{ color: '#999', fontSize: 13 }}>No reviews yet — be the first to try this!</p>
-            )}
+            ))}
           </div>
           <div className="pd-white-card">
             <h3 className="pd-sec-title">Ingredients</h3>
