@@ -40,18 +40,19 @@
 
 /* Products listing card extras */
 .pc-size-price-list {
-  display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 10px;
+  display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px;
+  min-height: 27px;
 }
 .pc-size-pill {
-  background: #F4F4F4; border: 1px solid #e5e5e5;
-  border-radius: 5px; padding: 2px 8px;
-  font-size: 11px; color: #444; white-space: nowrap;
+  background: #fff8e6; border: 1px solid #f0dfad;
+  border-radius: 6px; padding: 3px 8px;
+  font-size: 11px; color: #5c4730; font-weight: 750; white-space: nowrap;
 }
-.pc-size-pill strong { color: #C8102E; }
 .pc-coming-soon {
-  font-size: 12px; font-weight: 600; color: #C8102E;
+  font-size: 12px; font-weight: 700; color: #C8102E;
   background: #FFF3F3; border: 1px dashed #C8102E;
-  border-radius: 6px; padding: 5px 10px; margin: 6px 0 10px;
+  border-radius: 6px; padding: 6px 10px; margin: 8px 0 10px;
+  min-height: 27px;
 }
 
 /* New badge on card top-right */

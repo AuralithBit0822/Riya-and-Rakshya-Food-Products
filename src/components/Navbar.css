@@ -1,6 +1,7 @@
 /* ── Navbar shell ──────────────────────────────────────── */
 .navbar {
-    background: #FFFDE7;
+    background: rgba(255, 253, 231, 0.96);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid #f0e6b2;
     position: sticky; top: 0; z-index: 1000;
     transition: box-shadow .25s;
@@ -8,10 +9,10 @@
   .navbar--scrolled { box-shadow: 0 3px 16px rgba(0,0,0,.1); }
   
   .navbar__inner {
-    max-width: 1200px; margin: 0 auto;
-    padding: 0 24px;
+    max-width: 1220px; margin: 0 auto;
+    padding: 0 clamp(14px, 3vw, 24px);
     height: 66px;
-    display: flex; align-items: center; gap: 20px;
+    display: flex; align-items: center; gap: clamp(10px, 2vw, 20px);
   }
   
   /* Logo */
@@ -27,7 +28,7 @@
     align-items: center; justify-content: center;
     color: #fff; font-weight: 900; font-size: 12px;
   }
-  .navbar__logo-text { display: flex; flex-direction: column; }
+  .navbar__logo-text { display: flex; flex-direction: column; min-width: 0; }
   .navbar__logo-name { font-weight: 800; font-size: 15px; color: #C8102E; line-height: 1.2; }
   .navbar__logo-sub  { font-size: 11px; color: #e85d20; font-weight: 500; }
   
@@ -35,9 +36,10 @@
   .navbar__links {
     display: flex; gap: 2px;
     list-style: none; flex: 1; justify-content: center;
+    min-width: 0;
   }
   .navbar__link {
-    padding: 7px 14px; border-radius: 7px;
+    padding: 7px clamp(8px, 1.2vw, 14px); border-radius: 7px;
     font-size: 14px; font-weight: 500; color: #444;
     text-decoration: none; white-space: nowrap;
     transition: color .18s, background .18s;
@@ -50,7 +52,7 @@
   }
   
   /* Right cluster */
-  .navbar__right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .navbar__right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto; }
   
   /* Search */
   .navbar__search {
@@ -63,7 +65,7 @@
   .navbar__search-input {
     border: none; outline: none;
     padding: 7px 12px; font-size: 13px;
-    width: 140px; background: transparent;
+    width: clamp(110px, 12vw, 150px); background: transparent;
     font-family: 'Poppins', sans-serif;
   }
   .navbar__search-btn {
@@ -122,7 +124,7 @@
   .navbar__drawer {
     position: fixed;
     top: 66px; left: 0; right: 0;
-    background: #FFFDE7;
+    background: rgba(255, 253, 231, 0.99);
     border-bottom: 1px solid #f0e6b2;
     z-index: 999;
     padding: 0 20px;
@@ -195,9 +197,22 @@
     .navbar__search.nav-desktop-search { display: none !important; }
     .navbar__wa-btn { display: none !important; }
     .navbar__inner  { padding: 0 16px; height: 60px; }
+    .navbar__drawer { top: 60px; }
+    .navbar__icon-btn { padding: 7px; }
+  }
+  @media (max-width: 520px) {
+    .navbar__inner { gap: 8px; }
+    .navbar__logo { gap: 8px; min-width: 0; }
+    .navbar__logo-img { width: 38px; height: 38px; }
+    .navbar__logo-fallback { width: 38px; height: 38px; }
+    .navbar__right { gap: 4px; }
+    .navbar__icon-btn { width: 34px; height: 34px; justify-content: center; padding: 0; }
+    .navbar__hamburger { width: 36px; height: 36px; padding: 0; }
   }
   @media (max-width: 400px) {
     .navbar__logo-name { font-size: 13px; }
     .navbar__logo-sub  { display: none; }
   }
-  
+  @media (max-width: 340px) {
+    .navbar__logo-text { display: none; }
+  }

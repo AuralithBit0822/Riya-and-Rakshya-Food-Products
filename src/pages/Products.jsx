@@ -11,12 +11,11 @@ function ProductCard({ product }) {
   const wishlisted = isWishlisted(product.id);
   const isNew     = product.price === 0;
   const hasSizes  = product.sizeOptions && product.sizeOptions.length > 0;
-  const minPrice  = hasSizes ? Math.min(...product.sizeOptions.map(s => s.price)) : null;
 
   return (
     <div className="product-card" onClick={() => navigate(`/products/${product.id}`)}>
       <div className="product-card-img">
-        <img src={product.image} alt={product.name}
+        <img src={product.image} alt={product.name} loading="lazy" decoding="async"
           onError={e => { e.target.style.opacity = '0.3'; }} />
         <span className="product-card-badge">{product.category}</span>
         {product.badge && (
@@ -24,6 +23,7 @@ function ProductCard({ product }) {
         )}
         <button
           className={`product-card-heart${wishlisted ? ' active' : ''}`}
+          aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
           onClick={e => { e.stopPropagation(); toggleWishlist(product); }}
         >
           <svg width="14" height="14" viewBox="0 0 24 24"
@@ -38,21 +38,22 @@ function ProductCard({ product }) {
         <h3>{product.name}</h3>
         <p>{product.description}</p>
 
-        {/* Price display */}
+        {/* Listing cards show sizes only. Prices are shown on the product detail page. */}
         {isNew ? (
-          <div className="pc-coming-soon">🔥 New — Price TBD</div>
+          <div className="pc-coming-soon">New - Price TBD</div>
         ) : hasSizes ? (
           <div className="pc-size-price-list">
             {product.sizeOptions.map(s => (
               <span key={s.size} className="pc-size-pill">
-                {s.size} — <strong>Rs.{s.price}</strong>
+                {s.size}
               </span>
             ))}
           </div>
         ) : (
-          <div className="pc-price">
-            Rs.{product.price}
-            <span className="pc-unit"> / {product.unit}</span>
+          <div className="pc-size-price-list">
+            <span className="pc-size-pill">
+              {product.unit}
+            </span>
           </div>
         )}
 

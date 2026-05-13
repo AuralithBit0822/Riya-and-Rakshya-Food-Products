@@ -97,7 +97,7 @@ export default function ProductDetails() {
         {/* Main card */}
         <div className="pd-card">
           <div className="pd-img-wrap">
-            <img src={product.image} alt={product.name} className="pd-img"
+            <img src={product.image} alt={product.name} className="pd-img" loading="eager" decoding="async"
               onError={e => { e.target.style.opacity = '0.3'; }} />
             {isNew && <div className="pd-new-overlay">🔥 New Launch</div>}
           </div>
@@ -244,7 +244,7 @@ export default function ProductDetails() {
               {related.map(p => (
                 <div key={p.id} className="product-card" onClick={() => navigate(`/products/${p.id}`)}>
                   <div className="product-card-img">
-                    <img src={p.image} alt={p.name}
+                    <img src={p.image} alt={p.name} loading="lazy" decoding="async"
                       onError={e => { e.target.style.opacity = '0.3'; }} />
                     <span className="product-card-badge">{p.category}</span>
                     <button className="product-card-heart"
@@ -258,14 +258,16 @@ export default function ProductDetails() {
                     <h3>{p.name}</h3>
                     <p>{p.description}</p>
                     {p.price === 0 ? (
-                      <div style={{ fontSize: 12, color: '#C8102E', fontWeight: 600 }}>🔥 Coming Soon</div>
+                      <div className="pc-coming-soon">Coming Soon</div>
                     ) : p.sizeOptions?.length > 0 ? (
-                      <div style={{ fontSize: 12, color: '#C8102E', fontWeight: 600 }}>
-                        From Rs.{Math.min(...p.sizeOptions.map(s => s.price))}
+                      <div className="pc-size-price-list">
+                        {p.sizeOptions.map((s) => (
+                          <span key={s.size} className="pc-size-pill">{s.size}</span>
+                        ))}
                       </div>
                     ) : (
-                      <div style={{ color: '#C8102E', fontWeight: 700, fontSize: 13 }}>
-                        Rs.{p.price} <span style={{ color: '#888', fontWeight: 400 }}>/ {p.unit}</span>
+                      <div className="pc-size-price-list">
+                        <span className="pc-size-pill">{p.unit}</span>
                       </div>
                     )}
                   </div>

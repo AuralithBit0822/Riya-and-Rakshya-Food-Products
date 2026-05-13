@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   ShoppingCart,
@@ -34,6 +34,8 @@ function ProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
+          decoding="async"
           onError={(e) => {
             e.target.style.opacity = '0.4';
           }}
@@ -74,13 +76,13 @@ function ProductCard({ product }) {
           <div className="pc-size-price-list">
             {product.sizeOptions.map((s) => (
               <span key={s.size} className="pc-size-pill">
-                {s.size} <strong>Rs.{s.price}</strong>
+                {s.size}
               </span>
             ))}
           </div>
         ) : (
-          <div className="pc-price">
-            Rs.{product.price} <span className="pc-unit">/ {product.unit}</span>
+          <div className="pc-size-price-list">
+            <span className="pc-size-pill">{product.unit}</span>
           </div>
         )}
 
@@ -148,7 +150,6 @@ const FEATURES = [
 export default function Home() {
   const navigate = useNavigate();
   const [tPage, setTPage] = useState(0);
-  const [stripStart, setStripStart] = useState(0);
   const featuredProducts = FEATURED_PRODUCT_IDS
     .map((id) => PRODUCTS.find((product) => product.id === id))
     .filter(Boolean);
@@ -156,20 +157,7 @@ export default function Home() {
     ...featuredProducts,
     ...PRODUCTS.filter((product) => !FEATURED_PRODUCT_IDS.includes(product.id)),
   ].slice(0, 8);
-  const stripSize = Math.min(5, PRODUCTS.length);
 
-  useEffect(() => {
-    if (!PRODUCTS.length) return undefined;
-
-    const id = setInterval(() => {
-      setStripStart((prev) => (prev + 1) % PRODUCTS.length);
-    }, 2500);
-    return () => clearInterval(id);
-  }, []);
-
-  const visibleStrip = PRODUCTS.length
-    ? Array.from({ length: stripSize }, (_, i) => PRODUCTS[(stripStart + i) % PRODUCTS.length])
-    : [];
   const testimonialPages = Math.ceil(TESTIMONIALS.length / TESTIMONIALS_PER_PAGE);
   const visibleTestimonials = TESTIMONIALS.slice(
     tPage * TESTIMONIALS_PER_PAGE,
@@ -217,6 +205,9 @@ export default function Home() {
                 src={item.img}
                 alt={item.label}
                 className="home-hero__cell-img"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
                 onError={(e) => {
                   e.target.style.opacity = '0.3';
                 }}
@@ -224,39 +215,6 @@ export default function Home() {
               <span className="home-hero__cell-label">{item.label}</span>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="home-new-strip">
-        <div className="container">
-          <div className="home-new-inner">
-            <div className="home-new-badge">
-              <Flame size={14} /> New Launches
-            </div>
-            <div className="home-new-products">
-              {visibleStrip.map((p, i) => (
-                <div
-                  key={`${p.id}-${i}`}
-                  className="home-new-item"
-                  onClick={() => navigate(`/products/${p.id}`)}
-                >
-                  <div className="home-new-img-wrap">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      onError={(e) => {
-                        e.target.style.opacity = '0.3';
-                      }}
-                    />
-                  </div>
-                  <span className="home-new-name">{p.name}</span>
-                </div>
-              ))}
-            </div>
-            <button className="home-new-cta" onClick={() => navigate('/products?cat=Chips%20%26%20Crisps')}>
-              View All <ArrowRight size={15} />
-            </button>
-          </div>
         </div>
       </section>
 
@@ -303,7 +261,12 @@ export default function Home() {
         <div className="container">
           <div className="home-story">
             <div className="home-story__img">
-              <img src="/images/products/kushal_all_in_opne_namkeen.png" alt="R&R snack products" />
+              <img
+                src="/images/products/kushal_all_in_opne_namkeen.png"
+                alt="R&R snack products"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="home-story__text">
               <div className="label-tag">About Us</div>
@@ -426,7 +389,7 @@ export default function Home() {
                 controls
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 poster="/images/products/cheese_balls.jpeg"
               >
                 Your browser does not support the video tag.
