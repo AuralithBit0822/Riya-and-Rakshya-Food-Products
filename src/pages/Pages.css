@@ -40,19 +40,26 @@
 
 /* Products listing card extras */
 .pc-size-price-list {
-  display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 10px;
-  min-height: 27px;
+  display: flex; flex-wrap: wrap; gap: 5px; margin: 7px 0 8px;
+  min-height: 24px;
 }
 .pc-size-pill {
-  background: #fff8e6; border: 1px solid #f0dfad;
-  border-radius: 6px; padding: 3px 8px;
-  font-size: 11px; color: #5c4730; font-weight: 750; white-space: nowrap;
+  background: linear-gradient(135deg, #fff8e6, #fff0bf);
+  border: 1px solid #efd58b;
+  border-radius: 999px;
+  box-shadow: 0 2px 7px rgba(164, 101, 0, .08);
+  color: #6b3d14;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 5px 8px;
+  white-space: nowrap;
 }
 .pc-coming-soon {
-  font-size: 12px; font-weight: 700; color: #C8102E;
-  background: #FFF3F3; border: 1px dashed #C8102E;
-  border-radius: 6px; padding: 6px 10px; margin: 8px 0 10px;
-  min-height: 27px;
+  font-size: 11px; font-weight: 800; color: #C8102E;
+  background: #FFF3F3; border: 1px dashed rgba(200, 16, 46, .55);
+  border-radius: 999px; padding: 6px 10px; margin: 7px 0 8px;
+  min-height: 24px;
 }
 
 /* New badge on card top-right */
@@ -74,16 +81,26 @@
 .results-count { color: #666; font-size: 13px; margin-bottom: 20px; }
 
 /* ── Filter tabs ─────────────────────────────────────── */
-.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
 .filter-tab {
-  padding: 8px 18px; border-radius: 20px; font-size: 13px;
-  font-weight: 600; cursor: pointer; border: none;
-  background: #fff; color: #555;
-  box-shadow: 0 1px 4px rgba(0,0,0,.1);
-  transition: all .2s;
+  padding: 8px 15px; border-radius: 999px; font-size: 12px;
+  font-weight: 750; cursor: pointer; border: 1px solid #eadfce;
+  background: #fff; color: #5a5148;
+  box-shadow: 0 4px 14px rgba(50, 35, 16, .06);
+  transition: border-color .2s, box-shadow .2s, color .2s, background .2s, transform .2s;
 }
-.filter-tab:hover { background: #f5e0e0; color: #C8102E; }
-.filter-tab--active { background: #C8102E !important; color: #fff !important; }
+.filter-tab:hover {
+  background: #fff4e0;
+  border-color: #f0c867;
+  color: #C8102E;
+  transform: translateY(-1px);
+}
+.filter-tab--active {
+  background: linear-gradient(135deg, #C8102E, #e85d20) !important;
+  border-color: transparent !important;
+  box-shadow: 0 8px 18px rgba(200,16,46,.22) !important;
+  color: #fff !important;
+}
 
 /* ── Product Detail ──────────────────────────────────── */
 .pd-wrap { padding: 24px 24px 48px; }
