@@ -74,13 +74,13 @@ export default function About() {
                 <p style={s.p}>We started with one goal: make snacks that are fast, tasty, and satisfying. From our kitchen to your table, every bite is crafted with care, using quality ingredients and traditional recipes. We believe that great taste comes from consistency and passion in every step of the process.</p>
                 <p style={s.p}>Our manufacturing journey began in a small kitchen in Bhairahwa, Nepal. We started as a family project, carefully crafting everything by hand. We used traditional recipes, blending age-old flavors with modern convenience. Word started spreading about the snacks, local shops started asking for more, and before we knew it, Riya &amp; Rakshya Food Products was born.</p>
                 <p style={s.p}>Today, Riya and Rakshya Food Products manufactures over 50 varieties of instant noodles, namkeen, dalmot, chips and bhujiya — loved by thousands across Nepal. We are committed to maintaining consistency, hygiene, and authentic flavours in every product we deliver.</p>
-              </div>
+</div>
               <div className="about-story-img">
-                <img src="/images/rnr-about.jpg" alt="R&R Products" className="about-story-img__img"
+                <img src="/images/rnr-about.jpg" alt="R&R Products"
                   loading="lazy" decoding="async" />
-                <div style={s.storyBadge}>
-                  <div style={s.storyBadgeNum}>50+</div>
-                  <div style={s.storyBadgeTxt}>Products Manufactured</div>
+                <div className="about-story-badge">
+                  <div className="about-story-badge__num">50+</div>
+                  <div className="about-story-badge__txt">Products Manufactured</div>
                 </div>
               </div>
             </div>
@@ -267,11 +267,6 @@ const s = {
   h2:  { fontSize: 24, fontWeight: 800, margin: '10px 0 16px' },
   p:   { color: '#666', fontSize: 14, lineHeight: 1.8, marginBottom: 12 },
   storyGrid:     { display: 'grid', gridTemplateColumns: '1fr 420px', gap: 50, alignItems: 'center' },
-  storyImgWrap:  { position: 'relative', height: 380 },
-  storyImg:      { width: '100%', height: '100%', objectFit: 'contain', borderRadius: 16 },
-  storyBadge:    { position: 'absolute', bottom: -16, left: -16, background: '#C8102E', color: '#fff', borderRadius: 12, padding: '14px 20px', boxShadow: '0 8px 24px rgba(200,16,46,0.35)', textAlign: 'center' },
-  storyBadgeNum: { fontSize: 28, fontWeight: 900, lineHeight: 1 },
-  storyBadgeTxt: { fontSize: 11, fontWeight: 600, opacity: 0.9, marginTop: 4 },
   mvGrid:        { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 },
   missionCard:   { background: '#C8102E', borderRadius: 12, padding: 30, color: '#fff' },
   visionCard:    { background: '#1a1a1a', borderRadius: 12, padding: 30, color: '#fff' },
