@@ -87,13 +87,12 @@
      transform: translateY(-3px);
    }
    
-   .product-card-img {
+ .product-card-img {
   position: relative;
   height: 200px;
-  background: transparent;
+  background: #f8f8f8;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden; flex-shrink: 0;
-  background: linear-gradient(145deg, #fffdf7 0%, #fff8ee 100%);
 }
    .product-card-img::after {
      background: linear-gradient(to top, rgba(0, 0, 0, .04), transparent 42%);
@@ -105,16 +104,18 @@
      position: absolute;
      right: 0;
    }
-  .product-card-img img {
+
+.product-card-img img {
   width: 100%; height: 100%;
   object-fit: contain;
   padding: 10px;
   transition: transform .35s ease;
-  mix-blend-mode: multiply;   /* makes white backgrounds transparent */
-  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.15));
+  /* NO mix-blend-mode — works for both light and dark bg images */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12));
 }
-   .product-card:hover .product-card-img img {
-  filter: drop-shadow(0 10px 20px rgba(200,16,46,0.2));
+.product-card:hover .product-card-img img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.2));
 }
    
    .product-card-badge {
