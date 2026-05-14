@@ -75,14 +75,18 @@ export default function About() {
                 <p style={s.p}>Our manufacturing journey began in a small kitchen in Bhairahwa, Nepal. We started as a family project, carefully crafting everything by hand. We used traditional recipes, blending age-old flavors with modern convenience. Word started spreading about the snacks, local shops started asking for more, and before we knew it, Riya &amp; Rakshya Food Products was born.</p>
                 <p style={s.p}>Today, Riya and Rakshya Food Products manufactures over 50 varieties of instant noodles, namkeen, dalmot, chips and bhujiya — loved by thousands across Nepal. We are committed to maintaining consistency, hygiene, and authentic flavours in every product we deliver.</p>
 </div>
-              <div className="about-story-img">
-                <img src="/images/rnr-about.jpg" alt="R&R Products"
-                  loading="lazy" decoding="async" />
-                <div className="about-story-badge">
-                  <div className="about-story-badge__num">50+</div>
-                  <div className="about-story-badge__txt">Products Manufactured</div>
-                </div>
-              </div>
+        <div className="about-story-img">
+          <img 
+            src="/images/rnr-about.jpg" 
+            alt="R&R Products"
+            loading="lazy" 
+            decoding="async"
+          />
+          <div className="about-story-badge">
+            <div className="about-story-badge__num">50+</div>
+            <div className="about-story-badge__txt">Products Manufactured</div>
+          </div>
+        </div>
             </div>
           </div>
         </section>

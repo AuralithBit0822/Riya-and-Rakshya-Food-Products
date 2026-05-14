@@ -357,29 +357,28 @@
   background: #f5f0e6;
   border-radius: 16px;
   overflow: hidden;
-  padding: 24px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 4/3;
 }
 
 .about-story-img img {
   width: 100%;
-  height: auto;
-  max-height: 320px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+.about-story-img:hover img {
+  transform: scale(1.03);
 }
 
 
 
 .about-story-badge {
   position: absolute;
-  bottom: 28px;
-  right: 28px;
+  bottom: 20px;
+  right: 20px;
   background: #C8102E;
   color: white;
   border-radius: 12px;
@@ -441,17 +440,29 @@
  .about-story-img {
     min-height: 260px;
     padding: 16px;
-  }
-  .about-story-img img {
-    max-height: 180px;
-  }
 }
 .about-story-img img {
-  width: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+.about-story-img:hover img {
+  transform: scale(1.03);
+}
+}
+.about-story-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+.about-story-img:hover img {
+  transform: scale(1.03);
 }
 .about-mv-grid        { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .about-products-grid  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
