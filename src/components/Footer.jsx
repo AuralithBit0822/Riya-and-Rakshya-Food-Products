@@ -96,7 +96,7 @@ export default function Footer() {
           <div className="footer__contact-row">
             <Phone size={14} />
             <div className="footer__contact-txt">
-              +977 985-7021032
+              +977 982-0299711
               <br />
               <span>Customer Support</span>
               <br />

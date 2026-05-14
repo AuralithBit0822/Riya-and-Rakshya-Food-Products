@@ -99,7 +99,7 @@ function ProductCard({ product }) {
                 <ShoppingCart size={13} /> Add to Cart
               </button>
               <a
-                href="https://wa.me/9779857021032"
+                href="https://wa.me/9779820299711"
                 target="_blank"
                 rel="noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -111,7 +111,7 @@ function ProductCard({ product }) {
             </>
           ) : (
             <a
-              href="https://wa.me/9779857021032"
+              href="https://wa.me/9779820299711"
               target="_blank"
               rel="noreferrer"
               className="btn-add-cart btn-add-cart--whatsapp"
@@ -298,7 +298,7 @@ export default function Home() {
             <button className="home-cta__btn-outline" onClick={() => navigate('/products')}>
               View Full Menu
             </button>
-            <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer" className="home-cta__btn-wa">
+            <a href="https://wa.me/9779820299711" target="_blank" rel="noreferrer" className="home-cta__btn-wa">
               <MessageCircle size={16} /> Chat on WhatsApp
             </a>
           </div>

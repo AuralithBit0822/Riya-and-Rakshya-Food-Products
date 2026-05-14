@@ -41,7 +41,7 @@ export default function Cart() {
     }
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
-    window.open(`https://wa.me/9779857021032?text=${buildMsg()}`, '_blank');
+    window.open(`https://wa.me/9779820299711?text=${buildMsg()}`, '_blank');
     setSubmitted(true);
     setTimeout(() => { clearCart(); navigate('/products'); }, 3000);
   };

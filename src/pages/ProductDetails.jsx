@@ -163,13 +163,13 @@ export default function ProductDetails() {
                     onClick={() => addToCart(product, selected?.size || product.unit)}>
                     <ShoppingCart size={16} /> Add to Cart
                   </button>
-                  <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
+                  <a href="https://wa.me/9779820299711" target="_blank" rel="noreferrer"
                     className="btn-green" style={{ textDecoration: 'none' }}>
                     <MessageCircle size={16} /> Chat via WhatsApp
                   </a>
                 </>
               ) : (
-                <a href="https://wa.me/9779857021032" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/9779820299711" target="_blank" rel="noreferrer"
                   className="btn-green" style={{ textDecoration: 'none', padding: '12px 28px', fontSize: 15 }}>
                   <MessageCircle size={16} /> Enquire on WhatsApp
                 </a>
