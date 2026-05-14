@@ -262,7 +262,7 @@ export default function Home() {
           <div className="home-story">
             <div className="home-story__img">
               <img
-                src="/images/products/kushal_all_in_opne_namkeen.png"
+                src="/images/RnR about.jpeg"
                 alt="R&R snack products"
                 loading="lazy"
                 decoding="async"
