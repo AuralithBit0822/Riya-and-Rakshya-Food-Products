@@ -465,3 +465,71 @@
   }
 }
 
+/* ── Product card entrance animation ─────────────────── */
+.products-grid .product-card:nth-child(1)  { animation-delay: 0.05s; }
+.products-grid .product-card:nth-child(2)  { animation-delay: 0.10s; }
+.products-grid .product-card:nth-child(3)  { animation-delay: 0.15s; }
+.products-grid .product-card:nth-child(4)  { animation-delay: 0.20s; }
+.products-grid .product-card:nth-child(5)  { animation-delay: 0.25s; }
+.products-grid .product-card:nth-child(6)  { animation-delay: 0.30s; }
+.products-grid .product-card:nth-child(7)  { animation-delay: 0.35s; }
+.products-grid .product-card:nth-child(8)  { animation-delay: 0.40s; }
+.products-grid .product-card:nth-child(9)  { animation-delay: 0.45s; }
+.products-grid .product-card:nth-child(10) { animation-delay: 0.50s; }
+.products-grid .product-card:nth-child(11) { animation-delay: 0.55s; }
+.products-grid .product-card:nth-child(12) { animation-delay: 0.60s; }
+
+/* Badge pulse on new products */
+.product-card-badge--right {
+  animation: badgePulse 2s ease-in-out infinite;
+}
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
+}
+
+/* Add to cart button ripple */
+.btn-add-cart {
+  position: relative;
+  overflow: hidden;
+}
+.btn-add-cart::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.btn-add-cart:hover::after { transform: scaleX(1); }
+
+/* Heart button bounce */
+.product-card-heart.active {
+  animation: heartBounce 0.4s ease;
+}
+@keyframes heartBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  70%  { transform: scale(0.88); }
+  100% { transform: scale(1); }
+}
+
+/* Card image shimmer on hover */
+.product-card-img::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: skewX(-20deg);
+  transition: none;
+  z-index: 2;
+  pointer-events: none;
+}
+.product-card:hover .product-card-img::before {
+  animation: shimmer 0.6s ease forwards;
+}
+@keyframes shimmer {
+  from { left: -100%; }
+  to   { left: 150%;  }
+}
