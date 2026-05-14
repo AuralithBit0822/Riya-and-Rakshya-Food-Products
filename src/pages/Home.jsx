@@ -129,7 +129,7 @@ function ProductCard({ product }) {
 const HERO_ITEMS = [
   { img: '/images/products/cheese_balls.jpeg', bg: '#fff8f0', label: 'Cheese Balls' },
   { img: '/images/products/Jungle_Janawar.png', bg: '#e8f5e8', label: 'Kids Snacks' },
-  { img: '/images/products/chatpate_bhuja_new.png', bg: '#1a0a00', label: 'Chatpate Bhuja' },
+  { img: '/images/products/chatpate_bhuja_bag.jpeg', bg: '#fff8f0', label: 'Chatpate Bhuja' },
   { img: '/images/products/aone_chips_green.jpeg', bg: '#e8f5e0', label: 'A-One Chips' },
 ];
 

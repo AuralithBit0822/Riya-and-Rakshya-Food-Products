@@ -76,7 +76,7 @@ export default function About() {
                 <p style={s.p}>Today, Riya and Rakshya Food Products manufactures over 50 varieties of instant noodles, namkeen, dalmot, chips and bhujiya — loved by thousands across Nepal. We are committed to maintaining consistency, hygiene, and authentic flavours in every product we deliver.</p>
               </div>
               <div style={s.storyImgWrap}>
-                <img src="/images/products/kushal_all_in_opne_namkeen.png" alt="R&R Products" style={s.storyImg} />
+                <img src="/images/RnR about.jpeg" alt="R&R Products" style={s.storyImg} />
                 <div style={s.storyBadge}>
                   <div style={s.storyBadgeNum}>50+</div>
                   <div style={s.storyBadgeTxt}>Products Manufactured</div>
