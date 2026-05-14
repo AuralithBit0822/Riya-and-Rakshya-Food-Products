@@ -12,6 +12,26 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 import './styles/global.css';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+// Updates <title> on every page for SEO
+function PageTitle() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const titles = {
+      '/':          'R&R Food Products | Riya & Rakshya — Nepal\'s No.1 Snacks',
+      '/products':  'All Products | RNR Food Products Nepal',
+      '/varieties': 'Snack Varieties | R&R Food Products',
+      '/about':     'About Us | Riya & Rakshya Food Products Nepal',
+      '/contact':   'Contact | RNR Food Products Bhairahwa Nepal',
+      '/cart':      'Your Cart | R&R Food Products',
+      '/wishlist':  'Wishlist | R&R Food Products',
+    };
+    document.title = titles[pathname] || 'R&R Food Products | Riya & Rakshya Nepal';
+  }, [pathname]);
+  return null;
+}
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -53,6 +73,7 @@ export default function App() {
               </div>
             } />
           </Routes>
+          <PageTitle />
         </Layout>
       </Router>
     </AppProvider>
