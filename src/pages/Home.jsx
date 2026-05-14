@@ -129,7 +129,7 @@ function ProductCard({ product }) {
 const HERO_ITEMS = [
   { img: '/images/products/cheese_balls.jpeg', bg: '#fff8f0', label: 'Cheese Balls' },
   { img: '/images/products/Jungle_Janawar.png', bg: '#e8f5e8', label: 'Kids Snacks' },
-  { img: '/images/products/chatpate_bhuja_bag.jpeg', bg: '#fff8f0', label: 'Chatpate Bhuja' },
+  { img: '/images/products/chatpate_bhuja_new.png', bg: '#fff8f0', label: 'Chatpate Bhuja' },
   { img: '/images/products/aone_chips_green.jpeg', bg: '#e8f5e0', label: 'A-One Chips' },
 ];
 
@@ -262,7 +262,7 @@ export default function Home() {
           <div className="home-story">
             <div className="home-story__img">
               <img
-                src="/images/RnR about.jpeg"
+                src="/images/rnr-about.jpg"
                 alt="R&R snack products"
                 loading="lazy"
                 decoding="async"

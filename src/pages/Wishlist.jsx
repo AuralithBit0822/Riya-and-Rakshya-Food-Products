@@ -38,7 +38,7 @@ export default function Wishlist() {
                 {wishlist.map(item => (
                   <div key={item.id} className="product-card" onClick={() => navigate(`/products/${item.id}`)}>
                     <div className="product-card-img">
-                      <img src={item.image} alt={item.name} />
+                      <img src={item.image} alt={item.name} loading="lazy" decoding="async" />
                       <span className="product-card-badge">{item.category}</span>
                       <button className="product-card-heart active" title="Remove from wishlist"
                         onClick={e => { e.stopPropagation(); toggleWishlist(item); }}>

@@ -347,6 +347,24 @@
 
 /* About — override inline grids at mobile via extra classes added in About */
 .about-story-grid     { display: grid; grid-template-columns: 1fr 420px; gap: 50px; align-items: center; }
+.about-story-img {
+  align-items: center;
+  background: linear-gradient(145deg, #fff8eb, #f8efe0);
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  min-height: 360px;
+  overflow: hidden;
+  padding: 28px;
+  width: 100%;
+}
+.about-story-img img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+}
 .about-mv-grid        { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .about-products-grid  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .about-qual-grid      { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }

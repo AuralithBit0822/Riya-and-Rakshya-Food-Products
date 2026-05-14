@@ -105,7 +105,8 @@ export default function Cart() {
             {cart.map(item => (
               <div key={item.cartKey} className="cart-item">
                 <div className="cart-item-img">
-                  <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
+                  <img src={item.image} alt={item.name} loading="lazy" decoding="async"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
                 </div>
                 <div className="cart-item-info">
                   <div className="cart-item-name">{item.name} <span style={{ color: '#888', fontSize: 12 }}>({item.selectedSize})</span></div>

@@ -25,7 +25,7 @@ export default function Varieties() {
             {VARIETIES.map((v, i) => (
               <div key={v.id} className={`var-card${i === 0 ? ' var-card--big' : i === 1 ? ' var-card--wide' : ''}`}
                 onClick={() => navigate(`/products?cat=${encodeURIComponent(v.name)}`)}>
-                <img src={v.image} alt={v.name} className="var-img" />
+                <img src={v.image} alt={v.name} className="var-img" loading="lazy" decoding="async" />
                 <div className="var-overlay" />
                 <div className="var-content">
                   <h3 className="var-title">{v.name}</h3>
