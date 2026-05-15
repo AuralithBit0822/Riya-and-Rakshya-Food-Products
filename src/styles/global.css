@@ -322,3 +322,10 @@
    
      .btn-primary, .btn-green, .btn-outline { padding: 10px 18px; font-size: 13px; }
    }
+
+   /* Force lazy decode on all non-hero images */
+.product-card-img img,
+.footer img,
+.about-products-grid img {
+  content-visibility: auto;
+}
