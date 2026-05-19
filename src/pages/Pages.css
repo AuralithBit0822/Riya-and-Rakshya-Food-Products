@@ -158,12 +158,25 @@
 .pd-related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
 /* ── Varieties ───────────────────────────────────────── */
-.var-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 260px 200px 200px;
+.var-grid {  
+  display: grid;  
+  grid-template-columns: repeat(6, 1fr); /* 6 = LCM(2,3) */  
+  grid-template-rows: 260px 200px 200px;  
   gap: 14px;
 }
+/* Row 1 — 2 items, each spans 3 of 6 cols */
+.var-grid .card:nth-child(1),.var-grid .card:nth-child(2) { 
+   grid-column: span 3;
+  }
+/* Row 2 — 3 items, each spans 2 of 6 cols */
+.var-grid .card:nth-child(3),.var-grid .card:nth-child(4),.var-grid .card:nth-child(5) { 
+   grid-column: span 2;
+  }
+/* Row 3 — 1 item, spans 2 of 6 cols */
+.var-grid .card:nth-child(6) { 
+   grid-column: span 2;
+  }
+  
 .var-card {
   position: relative; border-radius: 14px; overflow: hidden;
   cursor: pointer; grid-column: span 1;
