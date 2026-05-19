@@ -1,5 +1,4 @@
 // ─────────────────────────────────────────────────────────────
-// ─────────────────────────────────────────────────────────────
 //  R&R Food Products — Complete Product Catalogue
 //  Prices from client's handwritten list (May 2026)
 // ─────────────────────────────────────────────────────────────
@@ -7,21 +6,20 @@
 export const CATEGORIES = [
   'All Products',
   'Spicy Namkeen',
-  'Instant Noodles',
-  'Chips & Crisps',
+  'Bhujha & Chatpate Bhujha',
+  'Fryums',
+  'Chips/Kurkure/Cheese Balls',
+  'Puffs',
   'Diet & Health',
-  'Kids Snacks',
 ];
 
 export const VARIETIES = [
-  { id: 'v1', name: 'Spicy Namkeen',   description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/kushal_all_in_opne_namkeen.png' },
-  { id: 'v2', name: 'Instant Noodles', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Korean_Hot_Spicy.png' },
-  { id: 'v3', name: 'Chips & Crisps',  description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Potato.jpg' },
-  { id: 'v4', name: 'Diet & Health',   description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/die_mixture.jpg' },
-  { id: 'v5', name: 'Kids Snacks',     description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Jungle_Janawar.png' },
-  { id: 'v6', name: 'Bhujia',          description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/aloo_bhujia_final.jpg' },
-  { id: 'v7', name: 'Mixture Namkeen', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/mixture_namkeen_jpg.jpeg' },
-  { id: 'v8', name: 'Boondi',          description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/boondi_namkeen.jpg' },
+  { id: 'v1', name: 'Spicy Namkeen',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/kushal_all_in_opne_namkeen.png' },
+  { id: 'v2', name: 'Bhujha & Chatpate Bhujha', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/kushal_chatapate.png' },
+  { id: 'v3', name: 'Fryums',                   description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Korean_Hot_Spicy.png' },
+  { id: 'v4', name: 'Chips/Kurkure/Cheese Balls', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Potato.jpg' },
+  { id: 'v5', name: 'Puffs',                    description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Jungle_Janawar.png' },
+  { id: 'v6', name: 'Diet & Health',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/die_mixture.jpg' },
 ];
 
 export const PRODUCTS = [
@@ -35,9 +33,9 @@ export const PRODUCTS = [
     description: 'Authentic Nepali mixed namkeen — crunchy and full of spice.',
     image: '/images/products/aa_khushal_namkeen_latest_.png',
     sizeOptions: [
-      { size: '12g', price: 5 },
-      { size: '25g', price: 10 },
-      { size: '125g', price: 50 },
+      { size: '12g',  price: 5   },
+      { size: '25g',  price: 10  },
+      { size: '125g', price: 50  },
       { size: '250g', price: 100 },
       { size: '800g', price: 300 },
     ],
@@ -86,7 +84,7 @@ export const PRODUCTS = [
     description: 'New pack Kushal Chana Chur — 10% Extra, enjoy with Nepali product.',
     image: '/images/products/chana_chur.png',
     sizeOptions: [
-      { size: '20g', price: 10 },
+      { size: '20g',  price: 10  },
       { size: '200g', price: 100 },
     ],
     sizes: ['20g','200g'],
@@ -94,20 +92,6 @@ export const PRODUCTS = [
     ingredients: 'Chana dal, flattened rice, spices, vegetable oil.',
     allergy: 'May contain traces of gluten and mustard.',
     badge: '10% Extra',
-  },
-  {
-    id: 6,
-    name: 'Kushal Chatpate',
-    category: 'Spicy Namkeen',
-    price: 10, unit: '20g',
-    description: 'Tangy & spicy chatpate — original taste, amilo-piro flavour in every bite.',
-    image: '/images/products/kushal_chatapate.png',
-    sizeOptions: [{ size: '20g', price: 10 }],
-    sizes: ['20g'],
-    reviews: 211, rating: 5,
-    ingredients: 'Puffed rice, tomato powder, onion, chilli, spices.',
-    allergy: '100% Vegetarian.',
-    badge: 'Original Taste',
   },
   {
     id: 7,
@@ -137,7 +121,6 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: null,
   },
-
   {
     id: 10,
     name: 'Boondi Mixture Namkeen',
@@ -146,7 +129,7 @@ export const PRODUCTS = [
     description: "Kushal boondi mixture — satisfying cravings the healthy way. Nepal's No.1.",
     image: '/images/products/bnOONDI_MIXTURE_STAND.png',
     sizeOptions: [
-      { size: '28g', price: 10 },
+      { size: '28g',  price: 10  },
       { size: '300g', price: 150 },
     ],
     sizes: ['28g','300g'],
@@ -163,40 +146,12 @@ export const PRODUCTS = [
     description: 'Kushal premium boondi — crunchy round boondi in bold spice blend.',
     image: '/images/products/boondi_namkeen.jpg',
     sizeOptions: [
-      { size: '28g', price: 10 },
+      { size: '28g',  price: 10  },
       { size: '300g', price: 150 },
     ],
     sizes: ['28g','300g'],
     reviews: 145, rating: 4,
     ingredients: 'Chickpea flour, vegetable oil, salt, chilli powder, spices.',
-    allergy: '100% Vegetarian.',
-    badge: null,
-  },
-  {
-    id: 12,
-    name: 'Chatpate Bhuja (20g)',
-    category: 'Spicy Namkeen',
-    price: 10, unit: '20g',
-    description: 'Kushal chatpate bhuja — special pack for extra freshness. अमिलो पिरेको स्वादमा.',
-    image: '/images/products/bhailpuri.png',
-    sizeOptions: [{ size: '20g', price: 10 }],
-    sizes: ['20g'],
-    reviews: 289, rating: 5,
-    ingredients: 'Puffed rice, sev, peanuts, tomato, onion, chilli, spices.',
-    allergy: 'Contains peanuts. 100% Vegetarian.',
-    badge: 'Rs.10 Special',
-  },
-  {
-    id: 13,
-    name: 'Chatpate Bhuja (30g)',
-    category: 'Spicy Namkeen',
-    price: 10, unit: '30g',
-    description: 'R&R Chatpate Bhuja — bold fire flavour with akbare chutney. अमिलो पिरेको स्वादमा.',
-    image: '/images/products/chatpate_bhuja_new.png',
-    sizeOptions: [{ size: '30g', price: 10 }],
-    sizes: ['30g'],
-    reviews: 201, rating: 5,
-    ingredients: 'Puffed rice, sev, tomato chutney powder, spices.',
     allergy: '100% Vegetarian.',
     badge: null,
   },
@@ -236,7 +191,7 @@ export const PRODUCTS = [
     description: 'Kushal Moong Dal namkeen — rich in quality & taste. Premium, mouth-watering flavour.',
     image: '/images/products/Moong_Dal_rs_10_220x140mm.png',
     sizeOptions: [
-      { size: '12g', price: 10 },
+      { size: '12g',  price: 10  },
       { size: '175g', price: 100 },
     ],
     sizes: ['12g','175g'],
@@ -267,7 +222,7 @@ export const PRODUCTS = [
     description: 'Kushal namkeen — The Brand of Royal Choice. 100% Veg, 100% Guaranteed.',
     image: '/images/products/rnrn_kushal.png',
     sizeOptions: [
-      { size: '65g', price: 30 },
+      { size: '65g',  price: 30  },
       { size: '225g', price: 100 },
     ],
     sizes: ['65g','225g'],
@@ -276,23 +231,7 @@ export const PRODUCTS = [
     allergy: 'Contains peanuts. 100% Vegetarian.',
     badge: 'Royal Choice',
   },
-
-   {
-    id: 31,
-    name: 'Green Matar Fry',
-    category: 'Spicy Namkeen',
-    price: 10, unit: '15g',
-    description: 'R&R Green Matar Fry — crispy & crunchy fried green peas. Product of Nepal.',
-    image: '/images/products/motar.jpg',
-    sizeOptions: [{ size: '15g', price: 10 }],
-    sizes: ['15g'],
-    reviews: 223, rating: 4,
-    ingredients: 'Green peas, vegetable oil, timur masala, salt.',
-    allergy: '100% Vegetarian.',
-    badge: 'Rs.10 Only',
-  },
-
-    {
+  {
     id: 24,
     name: 'Kushal Nut Cracker',
     category: 'Spicy Namkeen',
@@ -306,22 +245,80 @@ export const PRODUCTS = [
     allergy: 'Contains peanuts. 100% Vegetarian.',
     badge: 'Crispy & Crunchy',
   },
-
-   {
+  {
+    id: 31,
+    name: 'Green Matar Fry',
+    category: 'Spicy Namkeen',
+    price: 10, unit: '15g',
+    description: 'R&R Green Matar Fry — crispy & crunchy fried green peas. Product of Nepal.',
+    image: '/images/products/motar.jpg',
+    sizeOptions: [{ size: '15g', price: 10 }],
+    sizes: ['15g'],
+    reviews: 223, rating: 4,
+    ingredients: 'Green peas, vegetable oil, timur masala, salt.',
+    allergy: '100% Vegetarian.',
+    badge: 'Rs.10 Only',
+  },
+  {
     id: 48,
     name: 'Nuts N Seeds',
     category: 'Spicy Namkeen',
-    price: TBD, unit: '300g',
+    price: null, unit: '300g',               // ← was TBD (invalid JS); set to null until price is confirmed
     description: 'Nuts N Seeds — crispy & crunchy, explosion of real taste.',
     image: '/images/products/Nuts N Seeds.jpeg',
-    sizeOptions: [{ size: '300g', price: TBD }],
+    sizeOptions: [{ size: '300g', price: null }],  // ← same fix
     sizes: ['300g'],
     reviews: 176, rating: 4,
     ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
     allergy: 'Contains peanuts. 100% Vegetarian.',
     badge: 'Crispy & Crunchy',
   },
-  // ── Fryums ────────────────────────────────────────
+
+  // ── BHUJHA & CHATPATE BHUJHA ───────────────────────────────
+  {
+    id: 6,
+    name: 'Kushal Chatpate',
+    category: 'Bhujha & Chatpate Bhujha',
+    price: 10, unit: '20g',
+    description: 'Tangy & spicy chatpate — original taste, amilo-piro flavour in every bite.',
+    image: '/images/products/kushal_chatapate.png',
+    sizeOptions: [{ size: '20g', price: 10 }],
+    sizes: ['20g'],
+    reviews: 211, rating: 5,
+    ingredients: 'Puffed rice, tomato powder, onion, chilli, spices.',
+    allergy: '100% Vegetarian.',
+    badge: 'Original Taste',
+  },
+  {
+    id: 12,
+    name: 'Chatpate Bhuja (20g)',
+    category: 'Bhujha & Chatpate Bhujha',
+    price: 10, unit: '20g',
+    description: 'Kushal chatpate bhuja — special pack for extra freshness.',
+    image: '/images/products/bhailpuri.png',
+    sizeOptions: [{ size: '20g', price: 10 }],
+    sizes: ['20g'],
+    reviews: 289, rating: 5,
+    ingredients: 'Puffed rice, sev, peanuts, tomato, onion, chilli, spices.',
+    allergy: 'Contains peanuts. 100% Vegetarian.',
+    badge: 'Rs.10 Special',
+  },
+  {
+    id: 13,
+    name: 'Chatpate Bhuja (30g)',
+    category: 'Bhujha & Chatpate Bhujha',
+    price: 10, unit: '30g',
+    description: 'R&R Chatpate Bhuja — bold fire flavour with akbare chutney.',
+    image: '/images/products/chatpate_bhuja_new.png',
+    sizeOptions: [{ size: '30g', price: 10 }],
+    sizes: ['30g'],
+    reviews: 201, rating: 5,
+    ingredients: 'Puffed rice, sev, tomato chutney powder, spices.',
+    allergy: '100% Vegetarian.',
+    badge: null,
+  },
+
+  // ── FRYUMS ────────────────────────────────────────────────
   {
     id: 19,
     name: 'Korean Hot & Spicy Noodles',
@@ -350,8 +347,21 @@ export const PRODUCTS = [
     allergy: 'Contains Wheat (Gluten).',
     badge: 'Rs.10 Only',
   },
-
-    {
+  {
+    id: 25,
+    name: 'Palak Paneer Namkeen',
+    category: 'Fryums',
+    price: 10, unit: '12g',
+    description: 'R&R Palak Paneer Namkeen — crunch it, taste it! Unique palak paneer flavour.',
+    image: '/images/products/Palak_paneer_Fryums.png',
+    sizeOptions: [{ size: '12g', price: 10 }],
+    sizes: ['12g'],
+    reviews: 198, rating: 5,
+    ingredients: 'Maize flour, spinach powder, paneer flavour, vegetable oil, spices.',
+    allergy: 'Contains dairy traces. 100% Vegetarian.',
+    badge: 'Crunch It',
+  },
+  {
     id: 26,
     name: 'Big ABCD Lacy Masti',
     category: 'Fryums',
@@ -365,8 +375,7 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: "Nepal's No.1",
   },
-
-    {
+  {
     id: 29,
     name: 'Chinese Pasta',
     category: 'Fryums',
@@ -380,8 +389,7 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: 'Free Ketchup',
   },
-
-   {
+  {
     id: 30,
     name: 'Chinese Penny Pasta',
     category: 'Fryums',
@@ -395,8 +403,7 @@ export const PRODUCTS = [
     allergy: 'Contains Wheat (Gluten).',
     badge: 'Free Ketchup',
   },
-
-    {
+  {
     id: 39,
     name: 'Jungle Janawar',
     category: 'Fryums',
@@ -410,8 +417,7 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian. Fun for kids!',
     badge: 'New',
   },
-
-   {
+  {
     id: 40,
     name: 'Masala Ponga',
     category: 'Fryums',
@@ -426,22 +432,7 @@ export const PRODUCTS = [
     badge: 'New',
   },
 
-    {
-    id: 25,
-    name: 'Palak Paneer Namkeen',
-    category: 'Fryums',
-    price: 10, unit: '12g',
-    description: 'R&R Palak Paneer Namkeen — crunch it, taste it! Unique palak paneer flavour.',
-    image: '/images/products/Palak_paneer_Fryums.png',
-    sizeOptions: [{ size: '12g', price: 10 }],
-    sizes: ['12g'],
-    reviews: 198, rating: 5,
-    ingredients: 'Maize flour, spinach powder, paneer flavour, vegetable oil, spices.',
-    allergy: 'Contains dairy traces. 100% Vegetarian.',
-    badge: 'Crunch It',
-  },
-
-  // ── Chips/Kurkure/Cheese Balls ─────────────────────────────────────────
+  // ── CHIPS / KURKURE / CHEESE BALLS ────────────────────────
   {
     id: 21,
     name: 'Potato Chips Hot Chilli',
@@ -492,7 +483,6 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: 'Hot Chilli',
   },
-
   {
     id: 37,
     name: 'Cheese Balls',
@@ -521,12 +511,11 @@ export const PRODUCTS = [
     allergy: 'Contains dairy. 100% Vegetarian.',
     badge: '20% Extra',
   },
-
-   {
+  {
     id: 46,
     name: 'A-One Chips Potato Chips',
     category: 'Chips/Kurkure/Cheese Balls',
-    price: TBD, unit: '45g',
+    price: null, unit: '45g',               // ← was TBD (invalid JS); set to null until price is confirmed
     description: 'R&R A-One Potato Chips — cream n onion flavour. 20% extra, crinkle cut.',
     image: '/images/products/Aone chips blue.jpeg',
     sizeOptions: [],
@@ -537,8 +526,7 @@ export const PRODUCTS = [
     badge: '20% Extra',
   },
 
-  // ── PUFFS────────────────────────────────────────────
-
+  // ── PUFFS ─────────────────────────────────────────────────
   {
     id: 27,
     name: 'Gudiya Rani Masala Puff',
@@ -568,10 +556,8 @@ export const PRODUCTS = [
     badge: 'Achari Flavour',
   },
 
-
-  // ── DIET & HEALTH ──────────────────────────────────────────
-
-   {
+  // ── DIET & HEALTH ─────────────────────────────────────────
+  {
     id: 9,
     name: 'Swadisht Bhuja',
     category: 'Diet & Health',
@@ -635,7 +621,7 @@ export const PRODUCTS = [
     description: 'Kushal Salted Peanuts — 100% premium quality, lightly salted for the perfect crunch.',
     image: '/images/products/salted.jpg',
     sizeOptions: [
-      { size: '15g', price: 10 },
+      { size: '15g',  price: 10  },
       { size: '300g', price: 200 },
     ],
     sizes: ['15g','300g'],
@@ -664,29 +650,30 @@ export const PRODUCTS = [
 //  TEAM MEMBERS
 // ─────────────────────────────────────────────────────────────
 export const TEAM = [
-  { id: 1, name: 'Mohan Pandey',    role: 'Founder & Director',      initials: 'MP', image: '' },
+  { id: 1, name: 'Mohan Pandey',   role: 'Founder & Director',      initials: 'MP', image: '' },
   { id: 2, name: 'Rakshya Pandey', role: 'Co-Founder & Operations', initials: 'RP', image: '' },
 ];
+
 // ─────────────────────────────────────────────────────────────
 //  TESTIMONIALS
 // ─────────────────────────────────────────────────────────────
 export const TESTIMONIALS = [
-  { id: 1, text: 'Kushal All In One has the proper Nepali chatpate taste. The namkeen stays crunchy, the masala is balanced, and every packet feels fresh.', name: 'Prakash Bhatta', location: 'Pokhara, Kaski', rating: 5 },
-  { id: 2, text: 'I keep R&R snacks in my shop because customers ask for them again. The packaging looks clean, the price is practical, and the quality is consistent.', name: 'Ramesh Kumar Yadav', location: 'Butwal, Rupandehi', rating: 5 },
-  { id: 3, text: 'The mixture namkeen tastes homemade but has professional finishing. It is spicy, crunchy, and perfect with tea for the whole family.', name: 'Sita Devi Chaudhary', location: 'Janakpur, Dhanusha', rating: 5 },
-  { id: 4, text: 'Potato chips and kids snacks are always fresh when they arrive. Good crunch, strong flavour, and very reliable for our canteen orders.', name: 'Dipesh Mahato', location: 'Biratnagar, Morang', rating: 5 },
-  { id: 5, text: 'R&R products have become regular snacks in our home. The taste feels local, the packets are hygienic, and the delivery is dependable.', name: 'Sabina Thapa', location: 'Hetauda, Makwanpur', rating: 5 },
-  { id: 6, text: 'The Korean Hot & Spicy noodles sell very fast in our store. Customers like the bold masala and the packet quality looks trustworthy.', name: 'Bikash Adhikari', location: 'Bharatpur, Chitwan', rating: 5 },
-  { id: 7, text: 'I ordered namkeen for our office tea break and everyone liked it. The flavour is not flat, the crunch lasts, and the price is reasonable.', name: 'Mina Karki', location: 'Nepalgunj, Banke', rating: 5 },
-  { id: 8, text: 'Jungle Janawar and Cheese Balls are favourites for children in our family. Fresh packets, nice taste, and no stale smell at all.', name: 'Puja Lamichhane', location: 'Tansen, Palpa', rating: 5 },
-  { id: 9, text: 'As a retailer, I appreciate that the products are consistent from carton to carton. R&R snacks are easy to recommend to regular customers.', name: 'Amit Sah', location: 'Birgunj, Parsa', rating: 5 },
-  { id: 10, text: 'The diet mixture has a clean taste and feels lighter than many other snacks. It is perfect when guests come home for chiya.', name: 'Anita Gurung', location: 'Dharan, Sunsari', rating: 5 },
-  { id: 11, text: 'Chatpate Bhuja has a strong local flavour and the crunch is excellent. It reminds me of snacks we buy during travel, but cleaner packed.', name: 'Kiran Rai', location: 'Ilam', rating: 5 },
-  { id: 12, text: 'We use R&R snacks for school canteen supply because the small packs move quickly. Children like the taste and parents trust the hygiene.', name: 'Laxmi Poudel', location: 'Damak, Jhapa', rating: 5 },
-  { id: 13, text: 'The masala in the namkeen is balanced very well. It is spicy enough for Nepali taste but does not feel too heavy.', name: 'Roshan KC', location: 'Dang', rating: 5 },
-  { id: 14, text: 'A-One chips are crispy and the flavour coating is even. Every packet I opened had the same freshness and crunch.', name: 'Manisha Shahi', location: 'Surkhet', rating: 5 },
-  { id: 15, text: 'For wholesale orders, R&R has been dependable. Cartons arrive properly packed and customers recognize the taste now.', name: 'Hari Prasad Nepal', location: 'Kathmandu', rating: 5 },
-  { id: 16, text: 'Boondi mixture is very good with tea. The texture is light, the spice is clean, and the packet quality feels premium.', name: 'Nirmala Magar', location: 'Baglung', rating: 5 },
-  { id: 17, text: 'My family liked the kids snacks because they are fun and tasty. The products feel fresh, not oily or stale.', name: 'Sanjay Tamang', location: 'Bhaktapur', rating: 5 },
-  { id: 18, text: 'The snack range has good variety for a small store. Customers can choose noodles, chips, namkeen, and kids snacks from one brand.', name: 'Rekha Sharma', location: 'Lalitpur', rating: 5 },
+  { id: 1,  text: 'Kushal All In One has the proper Nepali chatpate taste. The namkeen stays crunchy, the masala is balanced, and every packet feels fresh.',          name: 'Prakash Bhatta',       location: 'Pokhara, Kaski',     rating: 5 },
+  { id: 2,  text: 'I keep R&R snacks in my shop because customers ask for them again. The packaging looks clean, the price is practical, and the quality is consistent.', name: 'Ramesh Kumar Yadav',   location: 'Butwal, Rupandehi',  rating: 5 },
+  { id: 3,  text: 'The mixture namkeen tastes homemade but has professional finishing. It is spicy, crunchy, and perfect with tea for the whole family.',               name: 'Sita Devi Chaudhary',  location: 'Janakpur, Dhanusha', rating: 5 },
+  { id: 4,  text: 'Potato chips and kids snacks are always fresh when they arrive. Good crunch, strong flavour, and very reliable for our canteen orders.',             name: 'Dipesh Mahato',        location: 'Biratnagar, Morang', rating: 5 },
+  { id: 5,  text: 'R&R products have become regular snacks in our home. The taste feels local, the packets are hygienic, and the delivery is dependable.',             name: 'Sabina Thapa',         location: 'Hetauda, Makwanpur', rating: 5 },
+  { id: 6,  text: 'The Korean Hot & Spicy noodles sell very fast in our store. Customers like the bold masala and the packet quality looks trustworthy.',               name: 'Bikash Adhikari',      location: 'Bharatpur, Chitwan', rating: 5 },
+  { id: 7,  text: 'I ordered namkeen for our office tea break and everyone liked it. The flavour is not flat, the crunch lasts, and the price is reasonable.',         name: 'Mina Karki',           location: 'Nepalgunj, Banke',   rating: 5 },
+  { id: 8,  text: 'Jungle Janawar and Cheese Balls are favourites for children in our family. Fresh packets, nice taste, and no stale smell at all.',                  name: 'Puja Lamichhane',      location: 'Tansen, Palpa',      rating: 5 },
+  { id: 9,  text: 'As a retailer, I appreciate that the products are consistent from carton to carton. R&R snacks are easy to recommend to regular customers.',        name: 'Amit Sah',             location: 'Birgunj, Parsa',     rating: 5 },
+  { id: 10, text: 'The diet mixture has a clean taste and feels lighter than many other snacks. It is perfect when guests come home for chiya.',                       name: 'Anita Gurung',         location: 'Dharan, Sunsari',    rating: 5 },
+  { id: 11, text: 'Chatpate Bhuja has a strong local flavour and the crunch is excellent. It reminds me of snacks we buy during travel, but cleaner packed.',         name: 'Kiran Rai',            location: 'Ilam',               rating: 5 },
+  { id: 12, text: 'We use R&R snacks for school canteen supply because the small packs move quickly. Children like the taste and parents trust the hygiene.',          name: 'Laxmi Poudel',         location: 'Damak, Jhapa',       rating: 5 },
+  { id: 13, text: 'The masala in the namkeen is balanced very well. It is spicy enough for Nepali taste but does not feel too heavy.',                                 name: 'Roshan KC',            location: 'Dang',               rating: 5 },
+  { id: 14, text: 'A-One chips are crispy and the flavour coating is even. Every packet I opened had the same freshness and crunch.',                                  name: 'Manisha Shahi',        location: 'Surkhet',            rating: 5 },
+  { id: 15, text: 'For wholesale orders, R&R has been dependable. Cartons arrive properly packed and customers recognize the taste now.',                              name: 'Hari Prasad Nepal',    location: 'Kathmandu',          rating: 5 },
+  { id: 16, text: 'Boondi mixture is very good with tea. The texture is light, the spice is clean, and the packet quality feels premium.',                            name: 'Nirmala Magar',        location: 'Baglung',            rating: 5 },
+  { id: 17, text: 'My family liked the kids snacks because they are fun and tasty. The products feel fresh, not oily or stale.',                                      name: 'Sanjay Tamang',        location: 'Bhaktapur',          rating: 5 },
+  { id: 18, text: 'The snack range has good variety for a small store. Customers can choose noodles, chips, namkeen, and kids snacks from one brand.',                name: 'Rekha Sharma',         location: 'Lalitpur',           rating: 5 },
 ];
