@@ -318,6 +318,21 @@ export const PRODUCTS = [
     badge: null,
   },
 
+   {
+    id: 49,
+    name: 'Bhailpuri Chatpate Bhuja',
+    category: 'Bhujha & Chatpate Bhujha',
+    price: 10, unit: '30g',
+    description: 'R&R Chatpate Bhuja — bold fire flavour with akbare chutney.',
+    image: '/images/products/bhailpuri.png',
+    sizeOptions: [{ size: '30g', price: 10 }],
+    sizes: ['30g'],
+    reviews: 201, rating: 5,
+    ingredients: 'Puffed rice, sev, tomato chutney powder, spices.',
+    allergy: '100% Vegetarian.',
+    badge: null,
+  },
+
   // ── FRYUMS ────────────────────────────────────────────────
   {
     id: 19,
