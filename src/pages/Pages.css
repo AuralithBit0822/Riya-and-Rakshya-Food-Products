@@ -272,7 +272,6 @@
   /* Varieties */
   .var-grid {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 200px);
   }
   .var-card--wide { grid-column: span 1; }
   .var-feat-title { font-size: 22px; }
