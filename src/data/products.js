@@ -652,8 +652,8 @@ export const PRODUCTS = [
 //  TEAM MEMBERS
 // ─────────────────────────────────────────────────────────────
 export const TEAM = [
-  { id: 1, name: 'Mohan Pandey',   role: 'Founder & Director',      initials: 'MP', image: '' },
-  { id: 2, name: 'Rakshya Pandey', role: 'Co-Founder & Operations', initials: 'RP', image: '' },
+  { id: 1, name: 'Bhanu Pandey',   role: 'Founder & Director',      initials: 'BP', image: '' },
+  { id: 2, name: 'Mohan Pandey', role: 'Co-Founder & Operations', initials: 'MP', image: '' },
 ];
 
 // ─────────────────────────────────────────────────────────────
