@@ -160,7 +160,7 @@
 /* ── Varieties ───────────────────────────────────────── */
 .var-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 260px 200px 200px;
   gap: 14px;
 }
