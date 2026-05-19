@@ -300,7 +300,7 @@
   /* Varieties */
   .var-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 180px);
+    grid-template-rows: repeat(6, 180px);
   }
   .var-title { font-size: 16px; }
 
