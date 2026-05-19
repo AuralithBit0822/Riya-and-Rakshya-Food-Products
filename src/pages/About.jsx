@@ -30,7 +30,7 @@ const MANUFACTURE_PRODUCTS = [
     sub: 'Crunchy, flavourful, and irresistible.'
   },
   {
-    img: '/images/products/Jungle_Janawar.png',
+    img: '/images/products/Gudiya_Rani.png',
     label: 'Puffs',
     category: 'Puffs',
     sub: 'Crunchy, flavourful, and irresistible.'
