@@ -20,6 +20,7 @@ export const VARIETIES = [
   { id: 'v4', name: 'Chips/Kurkure/Cheese Balls', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Potato.jpg' },
   { id: 'v5', name: 'Puffs',                    description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Jungle_Janawar.png' },
   { id: 'v6', name: 'Diet & Health',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/die_mixture.jpg' },
+  { id: 'v7', name: 'Boondi',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/boondi_namkeen.jpg' },
 ];
 
 export const PRODUCTS = [
