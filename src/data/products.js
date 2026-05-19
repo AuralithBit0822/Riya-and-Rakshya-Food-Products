@@ -277,6 +277,50 @@ export const PRODUCTS = [
     badge: 'Royal Choice',
   },
 
+   {
+    id: 31,
+    name: 'Green Matar Fry',
+    category: 'Spicy Namkeen',
+    price: 10, unit: '15g',
+    description: 'R&R Green Matar Fry — crispy & crunchy fried green peas. Product of Nepal.',
+    image: '/images/products/motar.jpg',
+    sizeOptions: [{ size: '15g', price: 10 }],
+    sizes: ['15g'],
+    reviews: 223, rating: 4,
+    ingredients: 'Green peas, vegetable oil, timur masala, salt.',
+    allergy: '100% Vegetarian.',
+    badge: 'Rs.10 Only',
+  },
+
+    {
+    id: 24,
+    name: 'Kushal Nut Cracker',
+    category: 'Spicy Namkeen',
+    price: 10, unit: '15g',
+    description: 'Kushal Nut Cracker — crispy & crunchy, explosion of real taste.',
+    image: '/images/products/nut_cracker.png',
+    sizeOptions: [{ size: '15g', price: 10 }],
+    sizes: ['15g'],
+    reviews: 176, rating: 4,
+    ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
+    allergy: 'Contains peanuts. 100% Vegetarian.',
+    badge: 'Crispy & Crunchy',
+  },
+
+   {
+    id: 48,
+    name: 'Nuts N Seeds',
+    category: 'Spicy Namkeen',
+    price: TBD, unit: '300g',
+    description: 'Nuts N Seeds — crispy & crunchy, explosion of real taste.',
+    image: '/images/products/Nuts N Seeds.jpeg',
+    sizeOptions: [{ size: '300g', price: TBD }],
+    sizes: ['300g'],
+    reviews: 176, rating: 4,
+    ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
+    allergy: 'Contains peanuts. 100% Vegetarian.',
+    badge: 'Crispy & Crunchy',
+  },
   // ── Fryums ────────────────────────────────────────
   {
     id: 19,
@@ -397,11 +441,11 @@ export const PRODUCTS = [
     badge: 'Crunch It',
   },
 
-  // ── CHIPS & CRISPS ─────────────────────────────────────────
+  // ── Chips/Kurkure/Cheese Balls ─────────────────────────────────────────
   {
     id: 21,
     name: 'Potato Chips Hot Chilli',
-    category: 'Chips & Crisps',
+    category: 'Chips/Kurkure/Cheese Balls',
     price: 20, unit: '20g',
     description: 'R&R Potato Chips — typical Nepali taste, hot chilli magic masala flavour.',
     image: '/images/products/Potato.jpg',
@@ -415,7 +459,7 @@ export const PRODUCTS = [
   {
     id: 22,
     name: 'Potato Cracker',
-    category: 'Chips & Crisps',
+    category: 'Chips/Kurkure/Cheese Balls',
     price: 10, unit: '10g',
     description: 'R&R Potato Cracker — fresh, crispy & tasty.',
     image: '/images/products/potato_cracker_rs_10.png',
@@ -432,7 +476,7 @@ export const PRODUCTS = [
   {
     id: 23,
     name: 'Krunchy Sticks Masala Munch',
-    category: 'Chips & Crisps',
+    category: 'Chips/Kurkure/Cheese Balls',
     price: 5, unit: '7g',
     description: 'R&R Krunchy Sticks — time pass full masti snax! Hot chilli masala munch.',
     image: '/images/products/Rnr_Krunchy_Sticks_Rs_20_Nov_2022.png',
@@ -448,25 +492,11 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: 'Hot Chilli',
   },
-  {
-    id: 24,
-    name: 'Kushal Nut Cracker',
-    category: 'Chips & Crisps',
-    price: 10, unit: '15g',
-    description: 'Kushal Nut Cracker — crispy & crunchy, explosion of real taste.',
-    image: '/images/products/nut_cracker.png',
-    sizeOptions: [{ size: '15g', price: 10 }],
-    sizes: ['15g'],
-    reviews: 176, rating: 4,
-    ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
-    allergy: 'Contains peanuts. 100% Vegetarian.',
-    badge: 'Crispy & Crunchy',
-  },
 
   {
     id: 37,
     name: 'Cheese Balls',
-    category: 'Chips & Crisps',
+    category: 'Chips/Kurkure/Cheese Balls',
     price: 60, unit: '50g',
     description: 'R&R Cheese Balls — cheddar cheese flavoured crunchy balls, irresistibly delicious.',
     image: '/images/products/cheese_balls.jpeg',
@@ -480,10 +510,25 @@ export const PRODUCTS = [
   {
     id: 38,
     name: 'A-One Chips (Cream N Onion)',
-    category: 'Chips & Crisps',
+    category: 'Chips/Kurkure/Cheese Balls',
     price: 50, unit: '12g',
     description: 'R&R A-One Potato Chips — cream n onion flavour. 20% extra, crinkle cut.',
     image: '/images/products/aone_chips_green.jpeg',
+    sizeOptions: [],
+    sizes: [],
+    reviews: 130, rating: 5,
+    ingredients: 'Potato chips, vegetable oil, cream & onion seasoning.',
+    allergy: 'Contains dairy. 100% Vegetarian.',
+    badge: '20% Extra',
+  },
+
+   {
+    id: 46,
+    name: 'A-One Chips Potato Chips',
+    category: 'Chips/Kurkure/Cheese Balls',
+    price: TBD, unit: '45g',
+    description: 'R&R A-One Potato Chips — cream n onion flavour. 20% extra, crinkle cut.',
+    image: '/images/products/Aone chips blue.jpeg',
     sizeOptions: [],
     sizes: [],
     reviews: 130, rating: 5,
@@ -521,22 +566,6 @@ export const PRODUCTS = [
     ingredients: 'Maize flour, vegetable oil, achari seasoning.',
     allergy: '100% Vegetarian.',
     badge: 'Achari Flavour',
-  },
-
- 
-  {
-    id: 31,
-    name: 'Green Matar Fry',
-    category: 'Kids Snacks',
-    price: 10, unit: '15g',
-    description: 'R&R Green Matar Fry — crispy & crunchy fried green peas. Product of Nepal.',
-    image: '/images/products/motar.jpg',
-    sizeOptions: [{ size: '15g', price: 10 }],
-    sizes: ['15g'],
-    reviews: 223, rating: 4,
-    ingredients: 'Green peas, vegetable oil, timur masala, salt.',
-    allergy: '100% Vegetarian.',
-    badge: 'Rs.10 Only',
   },
 
 
