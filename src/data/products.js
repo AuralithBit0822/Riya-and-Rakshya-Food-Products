@@ -137,20 +137,7 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: null,
   },
-  {
-    id: 9,
-    name: 'Swadisht Bhuja',
-    category: 'Spicy Namkeen',
-    price: 80, unit: '300g',
-    description: 'Kushal Premium Quality swadisht bhuja — good for health, easy to digest.',
-    image: '/images/products/BUJAA-01.png',
-    sizeOptions: [{ size: '300g', price: 80 }],
-    sizes: ['300g'],
-    reviews: 132, rating: 4,
-    ingredients: 'Puffed rice, mustard oil, salt, turmeric, cumin.',
-    allergy: 'Good for health. Easy to digest. 100% Natural.',
-    badge: 'Premium Quality',
-  },
+
   {
     id: 10,
     name: 'Boondi Mixture Namkeen',
@@ -543,6 +530,21 @@ export const PRODUCTS = [
   },
 
   // ── DIET & HEALTH ──────────────────────────────────────────
+
+   {
+    id: 9,
+    name: 'Swadisht Bhuja',
+    category: 'Diet & Health',
+    price: 80, unit: '300g',
+    description: 'Kushal Premium Quality swadisht bhuja — good for health, easy to digest.',
+    image: '/images/products/BUJAA-01.png',
+    sizeOptions: [{ size: '300g', price: 80 }],
+    sizes: ['300g'],
+    reviews: 132, rating: 4,
+    ingredients: 'Puffed rice, mustard oil, salt, turmeric, cumin.',
+    allergy: 'Good for health. Easy to digest. 100% Natural.',
+    badge: 'Premium Quality',
+  },
   {
     id: 32,
     name: 'Poushtik Diet Mixture',
