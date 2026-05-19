@@ -5,12 +5,42 @@ import { TEAM } from '../data/products';
 import './Pages.css';
 
 const MANUFACTURE_PRODUCTS = [
-  {  name: 'Spicy Namkeen',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/kushal_all_in_opne_namkeen.png' },
-  {  name: 'Bhujha & Chatpate Bhujha', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/kushal_chatapate.png' },
-  {  name: 'Fryums',                   description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Korean_Hot_Spicy.png' },
-  { name: 'Chips/Kurkure/Cheese Balls', description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Potato.jpg' },
-  { name: 'Puffs',                    description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/Jungle_Janawar.png' },
-  { name: 'Diet & Health',            description: 'Crunchy, flavourful, and irresistible.', image: '/images/products/die_mixture.jpg' },
+  {
+    img: '/images/products/kushal_all_in_opne_namkeen.png',
+    label: 'Spicy Namkeen',
+    category: 'Spicy Namkeen',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  },
+  {
+    img: '/images/products/kushal_chatapate.png',
+    label: 'Bhujha & Chatpate Bhujha',
+    category: 'Bhujha & Chatpate Bhujha',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  },
+  {
+    img: '/images/products/Korean_Hot_Spicy.png',
+    label: 'Fryums',
+    category: 'Fryums',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  },
+  {
+    img: '/images/products/Potato.jpg',
+    label: 'Chips/Kurkure/Cheese Balls',
+    category: 'Chips/Kurkure/Cheese Balls',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  },
+  {
+    img: '/images/products/Jungle_Janawar.png',
+    label: 'Puffs',
+    category: 'Puffs',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  },
+  {
+    img: '/images/products/die_mixture.jpg',
+    label: 'Diet & Health',
+    category: 'Diet & Health',
+    sub: 'Crunchy, flavourful, and irresistible.'
+  }
 ];
 
 function TeamMemberCard({ member }) {
