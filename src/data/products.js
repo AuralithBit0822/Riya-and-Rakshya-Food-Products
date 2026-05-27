@@ -266,7 +266,7 @@ export const PRODUCTS = [
    {
     id: 9,
     name: 'Swadisht Bhuja',
-    category: 'Diet & Health',
+    category: 'Bhujha & Chatpate Bhujha',
     price: 80, unit: '300g',
     description: 'Kushal Premium Quality swadisht bhuja — good for health, easy to digest.',
     image: '/images/products/BUJAA-01.png',
@@ -638,7 +638,7 @@ export const PRODUCTS = [
  {
     id: 48,
     name: 'Nuts N Seeds',
-    category: 'Spicy Namkeen',
+    category: 'Diet & Health',
     price: null, unit: '300g',               // ← was TBD (invalid JS); set to null until price is confirmed
     description: 'Nuts N Seeds — crispy & crunchy, explosion of real taste.',
     image: '/images/products/Nuts N Seeds.jpeg',
@@ -649,7 +649,7 @@ export const PRODUCTS = [
     allergy: 'Contains peanuts. 100% Vegetarian.',
     badge: 'Crispy & Crunchy',
   },
-];
+]
 
 // ─────────────────────────────────────────────────────────────
 //  TEAM MEMBERS
