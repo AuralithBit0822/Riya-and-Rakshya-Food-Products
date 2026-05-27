@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,8 +12,6 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Wishlist from './pages/Wishlist';
 import './styles/global.css';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 // Updates <title> on every page for SEO
 function PageTitle() {
@@ -35,8 +33,14 @@ function PageTitle() {
 
 // Scroll to top on route change
 function ScrollToTop() {
-  const { pathname } = window.location;
-  React.useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  const { pathname, search, hash, key } = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pathname, search, hash, key]);
+
   return null;
 }
 

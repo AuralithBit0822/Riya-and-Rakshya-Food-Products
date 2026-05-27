@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ShoppingCart, MessageCircle, Home } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -89,10 +89,18 @@ export default function Products() {
   const initSearch = searchParams.get('search') || '';
   const [activeCat, setActiveCat] = useState(initCat);
   const { searchQuery } = useApp();
+  const productsSectionRef = useRef(null);
 
   useEffect(() => {
     setActiveCat(initCat);
   }, [initCat]);
+
+  const handleCategoryClick = (cat) => {
+    setActiveCat(cat);
+    requestAnimationFrame(() => {
+      productsSectionRef.current?.scrollIntoView({ block: 'start' });
+    });
+  };
 
   const filtered = useMemo(() => {
     let list = PRODUCTS;
@@ -129,7 +137,7 @@ export default function Products() {
             {CATEGORIES.map(cat => (
               <button key={cat}
                 type="button"
-                onClick={() => setActiveCat(cat)}
+                onClick={() => handleCategoryClick(cat)}
                 className={`product-subnav__link${activeCat === cat ? ' product-subnav__link--active' : ''}`}>
                 {cat}
               </button>
@@ -138,7 +146,7 @@ export default function Products() {
         </div>
       </nav>
 
-      <section className="section" style={{ background: '#F4F4F4', minHeight: 400 }}>
+      <section ref={productsSectionRef} className="section products-section" style={{ background: '#F4F4F4', minHeight: 400 }}>
         <div className="container">
           <p className="results-count">
             Showing <strong>{filtered.length}</strong> products
