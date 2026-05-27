@@ -200,7 +200,7 @@ export default function Home() {
 
         <div className="home-hero__grid" aria-label="Featured snack products">
           {HERO_ITEMS.map((item) => (
-            <div key={item.label} className="home-hero__cell" style={{ background: item.bg }}>
+            <div key={item.label} className="home-hero__cell" style={{ '--leaf-bg': item.bg }}>
               <img
                 src={item.img}
                 alt={item.label}
@@ -208,11 +208,10 @@ export default function Home() {
                 loading="eager"
                 decoding="async"
                 fetchpriority="high"
-                onError={(e) => {
-                  e.target.style.opacity = '0.3';
-                }}
+              onError={(e) => {
+                e.target.style.opacity = '0.3';
+              }}
               />
-              <span className="home-hero__cell-label">{item.label}</span>
             </div>
           ))}
         </div>
