@@ -11,26 +11,38 @@
   .navbar__inner {
     max-width: 1220px; margin: 0 auto;
     padding: 0 clamp(14px, 3vw, 24px);
-    height: 66px;
+    height: 88px;
     display: flex; align-items: center; gap: clamp(10px, 2vw, 20px);
   }
   
   /* Logo */
   .navbar__logo {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 14px;
     text-decoration: none; flex-shrink: 0;
   }
-  .navbar__logo-img { width: 44px; height: 44px; object-fit: contain; }
+  .navbar__logo-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(200, 16, 46, .12));
+  }
   .navbar__logo-fallback {
     display: none;
     background: linear-gradient(135deg,#C8102E,#e85d20);
-    border-radius: 8px; width: 42px; height: 42px;
+    border-radius: 12px; width: 58px; height: 58px;
     align-items: center; justify-content: center;
-    color: #fff; font-weight: 900; font-size: 12px;
+    color: #fff; font-weight: 900; font-size: 15px;
   }
   .navbar__logo-text { display: flex; flex-direction: column; min-width: 0; }
-  .navbar__logo-name { font-weight: 800; font-size: 15px; color: #C8102E; line-height: 1.2; }
-  .navbar__logo-sub  { font-size: 11px; color: #e85d20; font-weight: 500; }
+  .navbar__logo-name { font-weight: 900; font-size: 20px; color: #C8102E; line-height: 1.08; }
+  .navbar__logo-sub  {
+    color: #7a4c12;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 3px;
+    text-transform: uppercase;
+  }
   
   /* Links */
   .navbar__links {
@@ -39,7 +51,7 @@
     min-width: 0;
   }
   .navbar__link {
-    padding: 7px clamp(8px, 1.2vw, 14px); border-radius: 7px;
+    padding: 9px clamp(8px, 1.2vw, 14px); border-radius: 7px;
     font-size: 14px; font-weight: 500; color: #444;
     text-decoration: none; white-space: nowrap;
     transition: color .18s, background .18s;
@@ -64,13 +76,13 @@
   .navbar__search:focus-within { border-color: #C8102E; }
   .navbar__search-input {
     border: none; outline: none;
-    padding: 7px 12px; font-size: 13px;
+    padding: 9px 12px; font-size: 13px;
     width: clamp(110px, 12vw, 150px); background: transparent;
     font-family: 'Poppins', sans-serif;
   }
   .navbar__search-btn {
     background: none; border: none;
-    padding: 7px 10px; cursor: pointer;
+    padding: 9px 10px; cursor: pointer;
     display: flex; align-items: center;
   }
   
@@ -78,7 +90,7 @@
   .navbar__icon-btn {
     position: relative;
     display: flex; align-items: center;
-    padding: 8px; border-radius: 8px;
+    padding: 10px; border-radius: 8px;
     color: #555; text-decoration: none;
     transition: background .18s;
   }
@@ -95,7 +107,7 @@
   .navbar__wa-btn {
     background: #28A745; color: #fff;
     border: none; border-radius: 20px;
-    padding: 8px 18px; font-size: 13px; font-weight: 600;
+    padding: 10px 18px; font-size: 13px; font-weight: 600;
     cursor: pointer; white-space: nowrap;
     display: flex; align-items: center; gap: 6px;
     text-decoration: none; transition: background .2s;
@@ -123,7 +135,7 @@
   /* ── Mobile Drawer ─────────────────────────────────────── */
   .navbar__drawer {
     position: fixed;
-    top: 66px; left: 0; right: 0;
+    top: 88px; left: 0; right: 0;
     background: rgba(255, 253, 231, 0.99);
     border-bottom: 1px solid #f0e6b2;
     z-index: 999;
@@ -196,21 +208,25 @@
     .navbar__links  { display: none !important; }
     .navbar__search.nav-desktop-search { display: none !important; }
     .navbar__wa-btn { display: none !important; }
-    .navbar__inner  { padding: 0 16px; height: 60px; }
-    .navbar__drawer { top: 60px; }
+    .navbar__inner  { padding: 0 16px; height: 72px; }
+    .navbar__drawer { top: 72px; }
+    .navbar__logo-img { width: 50px; height: 50px; }
+    .navbar__logo-fallback { width: 48px; height: 48px; }
+    .navbar__logo-name { font-size: 16px; }
+    .navbar__logo-sub { font-size: 10px; }
     .navbar__icon-btn { padding: 7px; }
   }
   @media (max-width: 520px) {
     .navbar__inner { gap: 8px; }
     .navbar__logo { gap: 8px; min-width: 0; }
-    .navbar__logo-img { width: 38px; height: 38px; }
-    .navbar__logo-fallback { width: 38px; height: 38px; }
+    .navbar__logo-img { width: 46px; height: 46px; }
+    .navbar__logo-fallback { width: 44px; height: 44px; }
     .navbar__right { gap: 4px; }
     .navbar__icon-btn { width: 34px; height: 34px; justify-content: center; padding: 0; }
     .navbar__hamburger { width: 36px; height: 36px; padding: 0; }
   }
   @media (max-width: 400px) {
-    .navbar__logo-name { font-size: 13px; }
+    .navbar__logo-name { font-size: 14px; }
     .navbar__logo-sub  { display: none; }
   }
   @media (max-width: 340px) {

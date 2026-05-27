@@ -80,6 +80,67 @@
 .empty-state p  { margin-top: 8px; font-size: 14px; }
 .results-count { color: #666; font-size: 13px; margin-bottom: 20px; }
 
+/* Product page sub navigation */
+.product-subnav {
+  background: #fffaf0;
+  border-bottom: 1px solid #eadfce;
+  box-shadow: 0 8px 24px rgba(67, 43, 13, .07);
+  position: sticky;
+  top: 88px;
+  z-index: 900;
+}
+.product-subnav__inner {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: 14px clamp(14px, 3vw, 24px);
+}
+.product-subnav__label {
+  color: #7a4c12;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.product-subnav__links {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 1px;
+  scrollbar-width: thin;
+}
+.product-subnav__link {
+  background: #fff;
+  border: 1px solid #eadfce;
+  border-radius: 6px;
+  color: #4f4539;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 10px 14px;
+  transition: background .2s, border-color .2s, color .2s;
+  white-space: nowrap;
+}
+.product-subnav__link:hover {
+  background: #fff4e0;
+  border-color: #f0c867;
+  color: #C8102E;
+}
+.product-subnav__link--active {
+  background: linear-gradient(135deg, #C8102E, #e85d20);
+  border-color: #C8102E;
+  box-shadow: 0 8px 18px rgba(200, 16, 46, .2);
+  color: #fff;
+}
+
 /* ── Filter tabs ─────────────────────────────────────── */
 .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
 .filter-tab {
@@ -268,6 +329,9 @@
 
 /* ── 900px ─────────────────────────────────────────── */
 @media (max-width: 900px) {
+  .product-subnav { top: 72px; }
+  .product-subnav__inner { padding: 12px 16px; }
+
   /* ProductDetails */
   .pd-card { grid-template-columns: 1fr; gap: 24px; }
   .pd-img-wrap { height: 260px; }
@@ -322,6 +386,14 @@
 
 /* ── 480px ─────────────────────────────────────────── */
 @media (max-width: 480px) {
+  .product-subnav__inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .product-subnav__label { font-size: 11px; }
+  .product-subnav__link { font-size: 11px; padding: 9px 11px; }
+
   /* Filter tabs scroll horizontally */
   .filter-tabs { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
   .filter-tab  { flex-shrink: 0; }

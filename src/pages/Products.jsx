@@ -122,20 +122,24 @@ export default function Products() {
         </div>
       </div>
 
-      <section className="section" style={{ background: '#F4F4F4', minHeight: 400 }}>
-        <div className="container">
-
-          {/* Category filter tabs */}
-          <div className="filter-tabs">
+      <nav className="product-subnav" aria-label="Product categories">
+        <div className="product-subnav__inner">
+          <span className="product-subnav__label">Shop by category</span>
+          <div className="product-subnav__links">
             {CATEGORIES.map(cat => (
               <button key={cat}
+                type="button"
                 onClick={() => setActiveCat(cat)}
-                className={`filter-tab${activeCat === cat ? ' filter-tab--active' : ''}`}>
+                className={`product-subnav__link${activeCat === cat ? ' product-subnav__link--active' : ''}`}>
                 {cat}
               </button>
             ))}
           </div>
+        </div>
+      </nav>
 
+      <section className="section" style={{ background: '#F4F4F4', minHeight: 400 }}>
+        <div className="container">
           <p className="results-count">
             Showing <strong>{filtered.length}</strong> products
             {activeCat !== 'All Products' && ` in ${activeCat}`}
