@@ -65,17 +65,22 @@
 }
 
 .home-hero__badge {
+  align-items: center;
   background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.24);
   border-radius: 999px;
   color: #fff;
   display: inline-flex;
+  gap: 7px;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
   margin-bottom: 18px;
   padding: 7px 15px;
-  text-transform: uppercase;
+}
+
+.home-hero__badge svg {
+  flex: 0 0 auto;
 }
 
 .home-hero__h1 {

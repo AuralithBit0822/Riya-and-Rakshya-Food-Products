@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   Award,
   Microscope,
+  Home as HomeIcon,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PRODUCTS, TESTIMONIALS } from '../data/products';
@@ -168,7 +169,9 @@ export default function Home() {
     <div className="home-page">
       <section className="home-hero">
         <div className="home-hero__content">
-          <div className="home-hero__badge">Taste of Nepal</div>
+          <div className="home-hero__badge">
+            <HomeIcon size={14} /> नेपालको स्वाद
+          </div>
           <h1 className="home-hero__h1">
             One Bite &amp; You Won't Stop <span>Craving</span>
           </h1>
