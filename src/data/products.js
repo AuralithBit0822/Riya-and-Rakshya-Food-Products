@@ -259,22 +259,24 @@ export const PRODUCTS = [
     allergy: '100% Vegetarian.',
     badge: 'Rs.10 Only',
   },
-  {
-    id: 48,
-    name: 'Nuts N Seeds',
-    category: 'Spicy Namkeen',
-    price: null, unit: '300g',               // ← was TBD (invalid JS); set to null until price is confirmed
-    description: 'Nuts N Seeds — crispy & crunchy, explosion of real taste.',
-    image: '/images/products/Nuts N Seeds.jpeg',
-    sizeOptions: [{ size: '300g', price: null }],  // ← same fix
-    sizes: ['300g'],
-    reviews: 176, rating: 4,
-    ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
-    allergy: 'Contains peanuts. 100% Vegetarian.',
-    badge: 'Crispy & Crunchy',
-  },
+ 
 
   // ── BHUJHA & CHATPATE BHUJHA ───────────────────────────────
+
+   {
+    id: 9,
+    name: 'Swadisht Bhuja',
+    category: 'Diet & Health',
+    price: 80, unit: '300g',
+    description: 'Kushal Premium Quality swadisht bhuja — good for health, easy to digest.',
+    image: '/images/products/BUJAA-01.png',
+    sizeOptions: [{ size: '300g', price: 80 }],
+    sizes: ['300g'],
+    reviews: 132, rating: 4,
+    ingredients: 'Puffed rice, mustard oil, salt, turmeric, cumin.',
+    allergy: 'Good for health. Easy to digest. 100% Natural.',
+    badge: 'Premium Quality',
+  },
   {
     id: 6,
     name: 'Kushal Chatpate',
@@ -559,20 +561,7 @@ export const PRODUCTS = [
   },
 
   // ── DIET & HEALTH ─────────────────────────────────────────
-  {
-    id: 9,
-    name: 'Swadisht Bhuja',
-    category: 'Diet & Health',
-    price: 80, unit: '300g',
-    description: 'Kushal Premium Quality swadisht bhuja — good for health, easy to digest.',
-    image: '/images/products/BUJAA-01.png',
-    sizeOptions: [{ size: '300g', price: 80 }],
-    sizes: ['300g'],
-    reviews: 132, rating: 4,
-    ingredients: 'Puffed rice, mustard oil, salt, turmeric, cumin.',
-    allergy: 'Good for health. Easy to digest. 100% Natural.',
-    badge: 'Premium Quality',
-  },
+ 
   {
     id: 32,
     name: 'Poushtik Diet Mixture',
@@ -645,6 +634,20 @@ export const PRODUCTS = [
     ingredients: 'Hill-grown maize, vegetable oil, spices.',
     allergy: '100% Vegetarian. High Protein.',
     badge: 'New',
+  },
+ {
+    id: 48,
+    name: 'Nuts N Seeds',
+    category: 'Spicy Namkeen',
+    price: null, unit: '300g',               // ← was TBD (invalid JS); set to null until price is confirmed
+    description: 'Nuts N Seeds — crispy & crunchy, explosion of real taste.',
+    image: '/images/products/Nuts N Seeds.jpeg',
+    sizeOptions: [{ size: '300g', price: null }],  // ← same fix
+    sizes: ['300g'],
+    reviews: 176, rating: 4,
+    ingredients: 'Peanuts, chickpea flour, spices, vegetable oil.',
+    allergy: 'Contains peanuts. 100% Vegetarian.',
+    badge: 'Crispy & Crunchy',
   },
 ];
 
