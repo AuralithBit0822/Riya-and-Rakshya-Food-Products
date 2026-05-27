@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Send } from 'lucide-react';
+import { CATEGORIES } from '../data/products';
 import './Footer.css';
-
-const CATS = [
-  ['All Products', 'All Products'],
-  ['Spicy Namkeen', 'Spicy Namkeen'],
-  ['Instant Noodles', 'Instant Noodles'],
-  ['Chips & Crisps', 'Chips & Crisps'],
-  ['Diet & Health', 'Diet & Health'],
-  ['Kids Snacks', 'Kids Snacks'],
-];
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -75,10 +67,10 @@ export default function Footer() {
         </div>
 
         <div className="footer__col">
-          <h4 className="footer__col-title">Categories</h4>
-          {CATS.map(([label, cat]) => (
+          <h4 className="footer__col-title">Product Categories</h4>
+          {CATEGORIES.map((cat) => (
             <Link key={cat} to={`/products?cat=${encodeURIComponent(cat)}`} className="footer__link">
-              {label}
+              {cat}
             </Link>
           ))}
         </div>
