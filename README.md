@@ -227,15 +227,10 @@ https://riya-and-rakshya-food-products.vercel.app/
 
 ---
 
-## 👨‍💻 Developed By
-
-### Supriya Dwivedi
-
-Full Stack Java Developer & Web Developer
 
 ### GitHub
 
-https://github.com/AuralithBit0822
+https://github.com/Auralith-Bit
 
 ---
 
